@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shekar — Scrapbook</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shekar — About">
+<meta property="og:description" content="10th fail. 12th fail. 3 Instagram pages. 200K+ followers. The actual scrapbook.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Manrope:wght@300;400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F2E9D8;
+  --paper: #FFFDF7;
+  --ink: #232017;
+  --muted: #6B6457;
+  --coral: #E8633A;
+  --coral-dark: #C84C26;
+  --teal: #4F9D95;
+  --teal-light: #DDEDE9;
+  --mustard: #E8B339;
+  --mustard-light: #FBEFD2;
+  --pink: #E89BA8;
+  --pink-light: #FCE8EC;
+  --blue: #5E7FB8;
+  --blue-light: #E4EAF5;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink); font-family: 'Manrope', sans-serif;
+  overflow-x: hidden; line-height: 1.6; font-size: 16px;
+  background-image:
+    radial-gradient(circle, rgba(35,32,23,0.07) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.serif { font-family: 'Fraunces', serif; }
+.script { font-family: 'Caveat', cursive; }
+.marker { font-family: 'Permanent Marker', cursive; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ── TAPE & PIN DECORATIONS ── */
+.tape { position: absolute; width: 70px; height: 26px; background: rgba(255,230,150,0.55); border: 1px solid rgba(0,0,0,0.04); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.tape.t1 { top: -12px; left: 30px; transform: rotate(-6deg); }
+.tape.t2 { top: -12px; right: 30px; transform: rotate(5deg); }
+.tape.tealtape { background: rgba(79,157,149,0.35); }
+.tape.pinktape { background: rgba(232,155,168,0.4); }
+.pin { position: absolute; width: 14px; height: 14px; border-radius: 50%; background: var(--coral); box-shadow: 0 2px 4px rgba(0,0,0,0.25), inset -2px -2px 3px rgba(0,0,0,0.2); z-index: 5; }
+
+/* ── NAV ── */
+nav { position: relative; z-index: 50; padding: 1.5rem 1.75rem 0.5rem; display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; }
+.nav-logo { font-family: 'Permanent Marker', cursive; font-size: 1.4rem; letter-spacing: -0.5px; text-decoration: none; color: var(--ink); transform: rotate(-2deg); display: inline-block; }
+.nav-right { display: flex; align-items: center; gap: 1.25rem; }
+.nav-link { font-size: 0.82rem; color: var(--ink); text-decoration: none; font-weight: 700; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+.nav-link:hover { border-color: var(--coral); }
+.nav-cta { background: var(--ink); color: var(--bg); padding: 0.55rem 1.3rem; border-radius: 100px; font-weight: 700; font-size: 0.8rem; text-decoration: none; transition: all 0.2s; white-space: nowrap; transform: rotate(-1deg); }
+.nav-cta:hover { background: var(--coral); transform: rotate(1deg); }
+
+/* ════════════════════════════════════════
+   THE SCRAPBOOK COVER — single dense hero
+   ════════════════════════════════════════ */
+.cover {
+  position: relative; max-width: 1100px; margin: 1.5rem auto 0; padding: 0 1.5rem 3rem;
+}
+.cover-board {
+  position: relative; background: var(--paper);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgba(35,32,23,0.18), 0 2px 8px rgba(35,32,23,0.08);
+  padding: 3rem 2.5rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  min-height: 600px;
+}
+
+/* polaroid photo stack */
+.polaroid {
+  background: #fff; padding: 10px 10px 38px; box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  position: absolute; width: 165px;
+}
+.polaroid img { width: 100%; aspect-ratio: 1/1.05; object-fit: cover; display: block; background: var(--teal-light); }
+.polaroid .cap { font-family: 'Caveat', cursive; font-size: 1.05rem; color: var(--ink); text-align: center; margin-top: 8px; transform: rotate(-1deg); }
+.p1 { top: 28px; right: 30px; transform: rotate(6deg); z-index: 6; }
+.p2 { top: 220px; right: 130px; transform: rotate(-8deg); z-index: 5; }
+.p3 { top: 380px; right: 10px; transform: rotate(4deg); z-index: 7; }
+
+/* headline zone */
+.cover-headline { position: relative; z-index: 8; padding-right: 1rem; }
+.fail-stamp {
+  display: inline-block; border: 2.5px solid var(--ink); color: var(--ink);
+  font-family: 'Permanent Marker', cursive; font-size: 0.78rem; padding: 0.3rem 0.7rem;
+  border-radius: 3px; transform: rotate(-5deg); margin-right: 0.5rem; margin-bottom: 1rem;
+  background: var(--mustard-light); box-shadow: 2px 2px 0 var(--ink);
+}
+.fail-stamp.coral-s { background: var(--coral); color: #fff; transform: rotate(4deg); }
+.cover-h1 {
+  font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(2.1rem, 4.8vw, 3.4rem);
+  line-height: 1.08; letter-spacing: -1.3px; margin-bottom: 1rem; max-width: 480px;
+}
+.cover-h1 .ital { font-style: italic; font-weight: 500; color: var(--coral); }
+.cover-sub { font-size: 0.98rem; color: var(--muted); max-width: 400px; margin-bottom: 1.5rem; line-height: 1.7; }
+.cover-btns { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+.btn-stamp {
+  display: inline-flex; align-items: center; gap: 0.5rem; background: var(--coral); color: #fff;
+  padding: 0.7rem 1.3rem; border-radius: 4px; font-weight: 700; font-size: 0.85rem; text-decoration: none;
+  border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn-stamp:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--ink); }
+.btn-outline-stamp {
+  display: inline-flex; align-items: center; gap: 0.5rem; background: var(--paper); color: var(--ink);
+  padding: 0.7rem 1.3rem; border-radius: 4px; font-weight: 700; font-size: 0.85rem; text-decoration: none;
+  border: 2px solid var(--ink); transition: all 0.15s;
+}
+.btn-outline-stamp:hover { background: var(--mustard-light); }
+
+/* sticky note */
+.sticky {
+  position: absolute; background: var(--mustard-light); padding: 0.85rem 1rem;
+  width: 150px; box-shadow: 2px 4px 10px rgba(0,0,0,0.15); transform: rotate(-3deg);
+  font-family: 'Caveat', cursive; font-size: 1.05rem; line-height: 1.3; color: var(--ink); z-index: 9;
+}
+.sticky.left-sticky { top: -22px; right: 130px; left: auto; transform: rotate(-5deg); background: var(--pink-light); z-index: 8; }
+
+/* washi strip with handle */
+.handle-tag {
+  display: inline-flex; align-items: center; gap: 0.4rem; background: var(--teal-light);
+  color: var(--teal); font-family: 'Caveat', cursive; font-size: 1.15rem; font-weight: 700;
+  padding: 0.25rem 0.8rem; border-radius: 100px; transform: rotate(-2deg); margin-bottom: 1rem;
+}
+
+/* numbers - washi tape strip */
+.cover-stats {
+  position: relative; z-index: 8; margin-top: 1.75rem; display: flex; gap: 0.6rem; flex-wrap: wrap;
+}
+.stat-chip {
+  background: var(--paper); border: 2px solid var(--ink); border-radius: 6px;
+  padding: 0.6rem 0.9rem; box-shadow: 2px 2px 0 rgba(35,32,23,0.15);
+}
+.stat-chip:nth-child(odd) { transform: rotate(-1.5deg); }
+.stat-chip:nth-child(even) { transform: rotate(1.5deg); }
+.stat-chip .sv { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.15rem; line-height: 1; }
+.stat-chip .sl { font-size: 0.6rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; font-weight: 700; margin-top: 0.2rem; }
+
+/* ════════════════════════════════════════
+   SCRAPBOOK SPREAD — single page, no long scroll sections
+   Everything below fits as "pages" in the book
+   ════════════════════════════════════════ */
+.spread { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+.page {
+  position: relative; background: var(--paper); border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 6px; box-shadow: 0 14px 40px rgba(35,32,23,0.12);
+  padding: 2.5rem 2.25rem; margin-bottom: 2rem;
+}
+.page-tab {
+  position: absolute; top: -14px; left: 2rem; background: var(--ink); color: var(--bg);
+  font-family: 'Permanent Marker', cursive; font-size: 0.78rem; padding: 0.35rem 0.9rem;
+  border-radius: 4px; transform: rotate(-2deg); box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+/* ── PAGE 1: THE STORY (diary entry style) ── */
+.diary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+.diary-text p { font-size: 0.98rem; line-height: 1.8; margin-bottom: 1rem; color: var(--ink); }
+.diary-text p:last-child { margin-bottom: 0; }
+.diary-text strong { background: var(--mustard-light); padding: 0 4px; }
+.diary-photo-link {
+  display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.25rem;
+  background: var(--ink); color: var(--bg); border-radius: 4px; padding: 0.65rem 1.1rem;
+  text-decoration: none; font-weight: 700; font-size: 0.82rem; transform: rotate(-1deg); transition: all 0.2s;
+}
+.diary-photo-link:hover { background: var(--coral); }
+.washi-divider { height: 22px; background: repeating-linear-gradient(135deg, var(--teal-light) 0 10px, var(--pink-light) 10px 20px); margin: 1.5rem -2.25rem; opacity: 0.6; }
+
+/* sticky notes timeline - compact corkboard style */
+.cork-notes { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0; }
+.cork-note {
+  background: var(--mustard-light); padding: 1rem 1.1rem; width: 180px;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.13); position: relative; font-size: 0.83rem;
+}
+.cork-note:nth-child(1) { transform: rotate(-3deg); background: var(--pink-light); }
+.cork-note:nth-child(2) { transform: rotate(2deg); background: var(--teal-light); }
+.cork-note:nth-child(3) { transform: rotate(-2deg); background: var(--mustard-light); }
+.cork-note .cn-year { font-family: 'Caveat', cursive; font-weight: 700; font-size: 1.2rem; color: var(--coral-dark); margin-bottom: 0.3rem; display:block; }
+.cork-note .cn-pin { position: absolute; top: -8px; left: 50%; transform: translateX(-50%); width: 12px; height: 12px; border-radius: 50%; background: var(--coral); box-shadow: 0 2px 3px rgba(0,0,0,0.3); }
+.cork-note p { color: var(--ink); line-height: 1.5; font-weight: 500; }
+
+/* ── PAGE 2: CHANNELS — receipt strip / ticket stubs ── */
+.tickets-row { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+.ticket {
+  display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center;
+  background: var(--paper); border: 2px solid var(--ink); border-radius: 8px; padding: 1.25rem 1.5rem;
+  position: relative; overflow: hidden;
+}
+.ticket::before, .ticket::after {
+  content: ''; position: absolute; width: 18px; height: 18px; background: var(--bg);
+  border-radius: 50%; top: 50%; transform: translateY(-50%);
+}
+.ticket::before { left: -9px; }
+.ticket::after { right: -9px; }
+.ticket .t-left { padding-right: 1rem; border-right: 2px dashed var(--ink); }
+.ticket .t-tag { font-family: 'Caveat', cursive; font-size: 1rem; color: var(--coral-dark); font-weight: 700; }
+.ticket .t-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.3rem; margin: 0.15rem 0; }
+.ticket .t-handle { font-size: 0.8rem; color: var(--coral-dark); text-decoration: none; font-weight: 700; }
+.ticket .t-desc { font-size: 0.84rem; color: var(--muted); margin-top: 0.5rem; line-height: 1.55; max-width: 480px; }
+.ticket .t-stats { display: flex; gap: 0.85rem; flex-wrap: wrap; }
+.t-stat { text-align: center; min-width: 64px; }
+.t-stat .tsv { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.2rem; line-height: 1; color: var(--ink); }
+.t-stat .tsl { font-size: 0.58rem; color: var(--muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.3px; margin-top: 0.2rem; }
+.ticket.spotlight-ticket { background: var(--ink); border-color: var(--ink); }
+.ticket.spotlight-ticket .t-left { border-right-color: rgba(251,244,233,0.25); }
+.ticket.spotlight-ticket .t-name { color: #fff; }
+.ticket.spotlight-ticket .t-handle { color: var(--coral); }
+.ticket.spotlight-ticket .t-desc { color: rgba(251,244,233,0.55); }
+.ticket.spotlight-ticket .tsv { color: var(--coral); }
+.ticket.spotlight-ticket .tsl { color: rgba(251,244,233,0.4); }
+
+/* ── PAGE 3: RECEIPT + BRANDS combined ── */
+.combo-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 2rem; }
+.mini-receipt { background: var(--bg); border: 2px dashed var(--ink); border-radius: 8px; padding: 1.5rem; }
+.mr-title { font-family: 'Permanent Marker', cursive; font-size: 0.9rem; text-align: center; margin-bottom: 1rem; padding-bottom: 0.85rem; border-bottom: 2px dashed var(--ink); }
+.mr-row { display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 0.85rem; border-bottom: 1px dotted #ccc; }
+.mr-row:last-child { border-bottom: none; }
+.mr-row .l { color: var(--muted); }
+.mr-row .v { font-family: 'Fraunces', serif; font-weight: 700; }
+.mr-row .v.coral { color: var(--coral-dark); }
+
+.brands-stack { display: flex; flex-direction: column; gap: 1rem; justify-content: center; }
+.brand-stamp-lg {
+  font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.6rem; border: 2.5px solid var(--ink);
+  padding: 1rem 1.5rem; border-radius: 6px; background: var(--paper); transform: rotate(-1.5deg);
+  box-shadow: 3px 3px 0 var(--ink); display: inline-block; width: fit-content;
+}
+.brand-sub-note { font-family: 'Caveat', cursive; font-size: 1.3rem; color: var(--muted); }
+.sig-mini-row { display: flex; gap: 0.75rem; margin-top: 0.5rem; }
+.sig-mini { background: var(--pink-light); border-radius: 8px; padding: 0.85rem 1rem; flex: 1; font-size: 0.8rem; }
+.sig-mini strong { display: block; font-family: 'Fraunces', serif; font-size: 0.92rem; margin-bottom: 0.25rem; }
+.sig-mini p { color: var(--muted); line-height: 1.5; font-size: 0.78rem; }
+
+/* ── PAGE 4: PLAYGROUND — small interactive ── */
+.pg-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.25rem; margin-bottom: 1.25rem; }
+.pg-btn {
+  background: var(--bg); border: 2px solid var(--ink); color: var(--ink);
+  padding: 0.5rem 1rem; border-radius: 100px; font-weight: 700; font-size: 0.8rem; cursor: pointer;
+  font-family: 'Manrope', sans-serif; transition: all 0.2s;
+}
+.pg-btn:hover, .pg-btn.active { background: var(--coral); border-color: var(--coral); color: #fff; }
+.pg-output { background: var(--bg); border-radius: 8px; padding: 1.25rem 1.5rem; min-height: 90px; display: flex; align-items: center; }
+.pg-output-text { font-family: 'Fraunces', serif; font-size: 1.05rem; font-style: italic; line-height: 1.55; }
+.pg-output-text .pg-num { color: var(--coral-dark); font-weight: 700; font-style: normal; }
+
+/* off duty - postcard style */
+.postcard-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 1.25rem; }
+.postcard { background: var(--bg); border: 1.5px solid #d8cfb8; border-radius: 6px; padding: 1.1rem; position: relative; }
+.postcard::before { content: '✉'; position: absolute; top: 0.6rem; right: 0.7rem; opacity: 0.2; font-size: 1rem; }
+.postcard h5 { font-family: 'Caveat', cursive; font-size: 1.2rem; color: var(--coral-dark); margin-bottom: 0.4rem; }
+.postcard p { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+
+/* ── DUAL PATH — two folded letters ── */
+.paths-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
+.path-card { border-radius: 8px; padding: 1.75rem; position: relative; }
+.path-card.brand-path { background: var(--ink); color: var(--bg); }
+.path-card.client-path { background: var(--mustard-light); border: 2px solid var(--ink); }
+.path-tag { font-family: 'Caveat', cursive; font-size: 1.2rem; display: block; margin-bottom: 0.4rem; }
+.path-card.brand-path .path-tag { color: var(--coral); }
+.path-card.client-path .path-tag { color: var(--coral-dark); }
+.path-card h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.35rem; margin-bottom: 0.65rem; letter-spacing: -0.3px; }
+.path-card p { font-size: 0.85rem; line-height: 1.65; margin-bottom: 1.25rem; }
+.path-card.brand-path p { color: rgba(251,244,233,0.6); }
+.path-card.client-path p { color: var(--muted); }
+
+/* FINAL */
+.final-page { text-align: center; background: var(--coral); border-radius: 8px; padding: 3.5rem 2rem; position: relative; overflow: hidden; }
+.final-page::before { content: '✱'; position: absolute; font-size: 10rem; color: rgba(255,255,255,0.1); top: -2rem; left: -1rem; font-family: 'Fraunces', serif; }
+.final-page h2 { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(1.8rem, 4.5vw, 2.8rem); color: #fff; letter-spacing: -1px; margin-bottom: 0.85rem; position: relative; }
+.final-page h2 .ital { font-style: italic; font-weight: 500; }
+.final-page p { color: rgba(255,255,255,0.85); font-size: 0.95rem; max-width: 420px; margin: 0 auto 1.5rem; line-height: 1.65; position: relative; }
+.btn-cream { background: var(--paper); color: var(--ink); padding: 0.9rem 2rem; border-radius: 4px; font-weight: 800; font-size: 0.92rem; text-decoration: none; display: inline-block; border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); transition: all 0.2s; position: relative; }
+.btn-cream:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--ink); }
+
+footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-size: 0.85rem; }
+.footer-logo { font-family: 'Permanent Marker', cursive; font-size: 1.2rem; color: var(--ink); margin-bottom: 0.4rem; transform: rotate(-1deg); display: inline-block; }
+.footer-links { display: flex; justify-content: center; gap: 1.25rem; margin-top: 1rem; flex-wrap: wrap; }
+.footer-links a { font-size: 0.76rem; color: var(--muted); text-decoration: none; font-weight: 700; }
+.footer-links a:hover { color: var(--coral); }
+
+@media (max-width: 860px) {
+  .cover-board { grid-template-columns: 1fr; padding: 2rem 1.5rem; min-height: auto; }
+  .polaroid { display: none; }
+  .sticky.left-sticky { display: none; }
+  .diary-grid { grid-template-columns: 1fr; }
+  .combo-grid { grid-template-columns: 1fr; }
+  .ticket { grid-template-columns: 1fr; }
+  .ticket .t-left { border-right: none; padding-right: 0; border-bottom: 2px dashed var(--ink); padding-bottom: 0.75rem; margin-bottom: 0.75rem; }
+  .ticket .t-stats { justify-content: flex-start; }
+  .postcard-grid { grid-template-columns: 1fr; }
+  .paths-grid { grid-template-columns: 1fr; }
+  .page { padding: 1.75rem 1.25rem; }
+  .cork-notes { flex-direction: column; }
+  .cork-note { width: auto; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="shekar-coaching.html" class="nav-logo">Shekar.</a>
+  <div class="nav-right">
+    <a href="shekar-coaching.html" class="nav-link">Work with me</a>
+    <a class="nav-cta" href="https://forms.gle/LrEXDdyyxGzvheFz7" target="_blank" rel="noopener">Let's talk →</a>
+  </div>
+</nav>
+
+<!-- ════════ COVER PAGE ════════ -->
+<div class="cover">
+  <div class="cover-board">
+    <div class="tape t1"></div>
+    <div class="tape t2 tealtape"></div>
+
+    <div class="cover-headline">
+      <div class="fail-stamp">10th — FAILED</div>
+      <div class="fail-stamp coral-s">DEGREE — NEVER STARTED</div>
+      <h1 class="cover-h1">Most of this started<br>because I had <span class="ital">nothing else going for me.</span></h1>
+      <p class="cover-sub">I'm Shekar. Three Instagram pages, a tiny clothing brand, and a coaching practice — all built off a phone, a stubborn streak, and no plan B.</p>
+      <p class="script" style="font-size:1.2rem;color:var(--coral-dark);margin:-0.75rem 0 1.25rem">if a failed-Intermediate 23 year old can do this — literally anyone can.</p>
+      <div class="cover-btns">
+        <a href="#story" class="btn-stamp">Flip the page →</a>
+        <a href="https://forms.gle/LrEXDdyyxGzvheFz7" target="_blank" rel="noopener" class="btn-outline-stamp">Let's talk</a>
+      </div>
+
+      <div class="cover-stats">
+        <div class="stat-chip"><div class="sv">10+</div><div class="sl">pages tried</div></div>
+        <div class="stat-chip"><div class="sv">4</div><div class="sl">active today</div></div>
+        <div class="stat-chip"><div class="sv">₹17L+</div><div class="sl">earned</div></div>
+        <div class="stat-chip"><div class="sv">5 yrs</div><div class="sl">no breaks</div></div>
+      </div>
+    </div>
+
+    <!-- floating polaroids -->
+    <div class="polaroid p1">
+      <img src="" alt="thinknwear" onerror="this.style.background='linear-gradient(135deg,#DDEDE9,#a8d5cd)'" id="polaroid1">
+      <div class="cap">ikea bag → trousers</div>
+    </div>
+    <div class="polaroid p2">
+      <img src="" alt="saree shirt" onerror="this.style.background='linear-gradient(135deg,#FCE8EC,#f3b9c5)'" id="polaroid2">
+      <div class="cap">mom's saree → shirt</div>
+    </div>
+    <div class="polaroid p3">
+      <img src="" alt="thinknwear feed" onerror="this.style.background='linear-gradient(135deg,#FBEFD2,#f0d28e)'" id="polaroid3">
+      <div class="cap">@thinknwear_, lately</div>
+    </div>
+    <div class="sticky left-sticky">5 yrs.<br>4 broke.<br>9 pages, deleted.<br>then this.</div>
+  </div>
+</div>
+
+<!-- ════════ SPREAD — PAGES OF THE SCRAPBOOK ════════ -->
+<div class="spread">
+
+  <!-- PAGE 1: STORY -->
+  <div class="page" id="story">
+    <div class="page-tab">page one — the messy bit</div>
+    <div class="diary-grid">
+      <div class="diary-text">
+        <p>I'm not going to dress this up. I failed my Intermediate (12th). Badly enough that we couldn't pay the final college fees — my marksheet and transfer certificate are still sitting with that college, unclaimed. No money for a degree, and my family didn't have it either. So I just... stopped. I wasn't good at studying anyway. What was the point?</p>
+        <p>I was 17, broke, with one phone — an <strong>Oppo A37</strong> — and a lot of free time I didn't know what to do with. My brother was the one who said it: "just try YouTube, what's the worst that happens." So we go there.</p>
+        <p>That first video is genuinely bad. No plan, no idea what a niche even was. Four years of posting and I made <strong>not even one rupee</strong>. I tried every "content coach," every monetization hack channel, even tried fake subscribers once out of pure desperation — nothing worked. Looking back, none of it was ever going to.</p>
+        <p>It was only after I slowed down on @thinknwear_ that things actually clicked — really understanding content instead of chasing hacks. In the <strong>last 9 months alone</strong>, that understanding turned into ₹17L+. The four years before that taught me everything the 9 months needed.</p>
+      </div>
+      <div>
+        <div class="washi-divider"></div>
+        <div class="cork-notes">
+          <div class="cork-note"><span class="cn-pin"></span><span class="cn-year">5 yrs ago</span><p>Posted my first-ever video on YouTube. 17, broke, an Oppo A37, and my brother's "just try it."</p></div>
+          <div class="cork-note"><span class="cn-pin"></span><span class="cn-year">3 yrs ago</span><p>Brought the same channel, same niche, to Instagram as @era_of_shekar. Still just reps, no plan.</p></div>
+          <div class="cork-note"><span class="cn-pin"></span><span class="cn-year">recent</span><p>@somashekarx hit 10k followers in 30 days. Started coaching others, on @thinknmedia_.</p></div>
+        </div>
+        <a class="diary-photo-link" href="https://youtu.be/YqQnGAwPm6A?si=PraFW2TEggig-NQE" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          watch the actual first video
+        </a>
+        <p class="script" style="font-size:1.15rem;color:var(--coral-dark);margin-top:0.85rem">fair warning — it's genuinely rough. that's the whole point.</p>
+      </div>
+    </div>
+
+    <div class="washi-divider"></div>
+
+    <p style="font-size:0.95rem;color:var(--muted);line-height:1.8">Somewhere in those four broke years, I also tried building <strong style="color:var(--ink)">nine different pages</strong> — open a channel, decide I'd "figured out" the niche, watch it go nowhere, delete it, start again. Most of them never made it past a few posts. That's not a footnote — that's most of the actual work.</p>
+  </div>
+
+  <!-- PAGE 2: CHANNELS AS TICKETS -->
+  <div class="page" id="channels">
+    <div class="page-tab">page two — the proof</div>
+    <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;margin-bottom:0.25rem">Three pages. Three reasons to learn.</h3>
+    <p style="font-size:0.86rem;color:var(--muted)">Tap any handle — every number here is real and public.</p>
+
+    <div class="tickets-row">
+      <div class="ticket">
+        <div class="t-left">
+          <span class="t-tag">est. ~3 yrs ago · the first one</span>
+          <div class="t-name">Era of Shekar</div>
+          <a href="https://www.instagram.com/era_of_shekar/" target="_blank" class="t-handle">@era_of_shekar ↗</a>
+          <p class="t-desc">Where I posted daily without a plan, just to build the habit. Fitness niche, also on YouTube.</p>
+        </div>
+        <div class="t-stats">
+          <div class="t-stat"><div class="tsv">26k</div><div class="tsl">IG followers</div></div>
+          <div class="t-stat"><div class="tsv">3.9M</div><div class="tsl">views</div></div>
+          <div class="t-stat"><div class="tsv">20.1k</div><div class="tsl">YT subs</div></div>
+          <div class="t-stat"><div class="tsv">611</div><div class="tsl">videos</div></div>
+        </div>
+      </div>
+
+      <div class="ticket">
+        <div class="t-left">
+          <span class="t-tag">est. ~1 yr ago · where I got good</span>
+          <div class="t-name">Think N Wear</div>
+          <a href="https://www.instagram.com/thinknwear_/" target="_blank" class="t-handle">@thinknwear_ ↗</a>
+          <p class="t-desc">Budget-friendly, creative fashion — IKEA bags into trousers, mom's sarees into shirts. Also on YouTube.</p>
+        </div>
+        <div class="t-stats">
+          <div class="t-stat"><div class="tsv">155k+</div><div class="tsl">followers</div></div>
+          <div class="t-stat"><div class="tsv">450k</div><div class="tsl">avg views</div></div>
+          <div class="t-stat"><div class="tsv">23.5M</div><div class="tsl">views/30d</div></div>
+          <div class="t-stat"><div class="tsv">4.7M</div><div class="tsl">reach</div></div>
+        </div>
+      </div>
+
+      <div class="ticket spotlight-ticket">
+        <div class="t-left">
+          <span class="t-tag">started with ₹20,000</span>
+          <div class="t-name">SomaShekarX</div>
+          <a href="https://www.instagram.com/somashekarx/" target="_blank" class="t-handle">@somashekarx ↗</a>
+          <p class="t-desc">A clothing brand, documented publicly from day one. 10k followers in the first 30 days.</p>
+        </div>
+        <div class="t-stats">
+          <div class="t-stat"><div class="tsv">16k</div><div class="tsl">followers</div></div>
+          <div class="t-stat"><div class="tsv">1.2M</div><div class="tsl">monthly views</div></div>
+          <div class="t-stat"><div class="tsv">270X</div><div class="tsl">return</div></div>
+          <div class="t-stat"><div class="tsv">4.5k</div><div class="tsl">brand fans</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 3: RECEIPT + BRANDS + SIGNATURE -->
+  <div class="page" id="brands">
+    <div class="page-tab">page three — the receipts</div>
+    <div class="combo-grid">
+      <div class="mini-receipt">
+        <div class="mr-title">5 YEARS, ITEMIZED</div>
+        <div class="mr-row"><span class="l">Earned from content</span><span class="v coral">₹17L+</span></div>
+        <div class="mr-row"><span class="l">Brand return</span><span class="v">270X</span></div>
+        <div class="mr-row"><span class="l">Followers, total</span><span class="v">200k+</span></div>
+        <div class="mr-row"><span class="l">Pages built</span><span class="v">3</span></div>
+        <div class="mr-row"><span class="l">Exams failed</span><span class="v">2</span></div>
+      </div>
+      <div class="brands-stack">
+        <div>
+          <div class="brand-stamp-lg">Snitch</div>
+          <p class="brand-sub-note">+ a few more — ask me on a call</p>
+        </div>
+        <div class="sig-mini-row">
+          <div class="sig-mini"><strong>🛍️ Signature move</strong><p>IKEA bag → trousers. Creativity over budget, every time.</p></div>
+          <div class="sig-mini"><strong>🧵 Most loved series</strong><p>Mom's old sarees → wearable shirts. Fashion meets nostalgia.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 4: PLAYGROUND -->
+  <div class="page">
+    <div class="page-tab">page four — try it yourself</div>
+    <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;margin-bottom:0.4rem">Here's how I'd think about your problem.</h3>
+    <p style="font-size:0.85rem;color:var(--muted)">Pick a starting point — this is the actual filter I run every idea through.</p>
+    <div class="pg-row" id="pgControls">
+      <button class="pg-btn active" data-key="zero">starting from zero</button>
+      <button class="pg-btn" data-key="stuck">stuck for months</button>
+      <button class="pg-btn" data-key="viral">one viral hit, nothing since</button>
+      <button class="pg-btn" data-key="brand">launching on ₹20k</button>
+    </div>
+    <div class="pg-output"><div class="pg-output-text" id="pgOutput"></div></div>
+  </div>
+
+  <!-- PAGE 5: OFF DUTY -->
+  <div class="page">
+    <div class="page-tab">page five — off the clock</div>
+    <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;margin-bottom:0.25rem">A few things that have nothing to do with any of this.</h3>
+    <div class="postcard-grid">
+      <div class="postcard"><h5>mornings</h5><p>Bad coffee, decent ideas. My best concepts show up between waking up and actually getting out of bed.</p></div>
+      <div class="postcard"><h5>still bad at</h5><p>Editing. Five years in, still re-cut things four or five times before they feel right.</p></div>
+      <div class="postcard"><h5>nobody asks</h5><p>My mom still doesn't fully get what I do. She's proud anyway. Matters more than the numbers above.</p></div>
+    </div>
+
+    <div class="washi-divider"></div>
+
+    <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;margin-bottom:0.6rem">I also just like testing my own limits.</h3>
+    <p style="font-size:0.92rem;color:var(--muted);line-height:1.75;margin-bottom:1rem">David Goggins holds the world record for most pull-ups in 17 hours — 4,030. I went live on YouTube and tried to attempt it myself. No real expectation anyone in India would care about a pull-up world record attempt, and honestly, barely anyone did — under 1,000 views. That was fine. I wasn't doing it for the views.</p>
+    <p style="font-size:0.92rem;color:var(--muted);line-height:1.75;margin-bottom:1.25rem">I chased it until my body said stop — a minor bicep tear ended it at <strong style="color:var(--ink)">2,800 pull-ups</strong>. Not the record. Still the most pull-ups I've ever seen anyone around me even attempt.</p>
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+      <a class="diary-photo-link" href="https://www.youtube.com/live/96PInllbg4s?si=4evH6tK-U8mZoqpa" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        watch the full live attempt
+      </a>
+      <a class="btn-outline-stamp" href="https://youtu.be/c5F3gAGRrwM?si=V0ooaJAKpE1mHbwk" target="_blank" rel="noopener" style="text-decoration:none">
+        watch the summary
+      </a>
+    </div>
+  </div>
+
+  <!-- PAGE 6: DUAL PATH -->
+  <div class="page">
+    <div class="page-tab">page six — if you're still here</div>
+    <div class="paths-grid">
+      <div class="path-card brand-path">
+        <span class="path-tag">for brands</span>
+        <h3>Let's collaborate</h3>
+        <p>Genuine, creative content across fashion, fitness, or lifestyle — built off 5 years of real, organic reach.</p>
+        <a class="btn-stamp" href="https://forms.gle/LrEXDdyyxGzvheFz7" target="_blank" rel="noopener">Talk brand collab →</a>
+      </div>
+      <div class="path-card client-path">
+        <span class="path-tag">for creators</span>
+        <h3>Grow your own page</h3>
+        <p>The same organic approach across three niches — I work with a small number of people, directly.</p>
+        <a class="btn-stamp" href="shekar-coaching.html">See plans →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL -->
+  <div class="final-page">
+    <h2>Read this far?<br><span class="ital">Let's talk.</span></h2>
+    <p>Brand, creator, or just curious — I read every message myself.</p>
+    <a class="btn-cream" href="https://forms.gle/LrEXDdyyxGzvheFz7" target="_blank" rel="noopener">Get in touch →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Shekar.</div>
+  <p>© 2024 Shekar.</p>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/thinknwear_/" target="_blank">@thinknwear_</a>
+    <a href="https://www.instagram.com/era_of_shekar/" target="_blank">@era_of_shekar</a>
+    <a href="https://www.instagram.com/somashekarx/" target="_blank">@somashekarx</a>
+    <a href="https://www.instagram.com/thinknmedia_/" target="_blank">@thinknmedia_</a>
+    <a href="shekar-coaching.html">Work with me</a>
+  </div>
+</footer>
+
+<script>
+function thumbSrcs(code) {
+  return ['https://www.instagram.com/p/'+code+'/media/?size=l','https://www.instagram.com/p/'+code+'/media/?size=m','https://www.instagram.com/p/'+code+'/media/?size=t'];
+}
+function tryLoad(img, srcs, i) {
+  if (i >= srcs.length) return;
+  img.onerror = function(){ tryLoad(img, srcs, i+1); };
+  img.src = srcs[i];
+}
+tryLoad(document.getElementById('polaroid1'), thumbSrcs('C6eA3jwJpDk'), 0);
+tryLoad(document.getElementById('polaroid2'), thumbSrcs('DW-xDJ7E4pY'), 0);
+tryLoad(document.getElementById('polaroid3'), thumbSrcs('DYKMr4FTKJc'), 0);
+
+var pgData = {
+  zero: 'Find <span class="pg-num">one thing</span> that\'s actually yours. Mine was IKEA bags into trousers. Post it badly if you have to.',
+  stuck: 'I went <span class="pg-num">4 months</span> stuck before I stopped copying trends and started making things nobody else was.',
+  viral: 'One hit is luck. The second is a pattern. Ask <span class="pg-num">what specifically</span> worked — then do that on purpose.',
+  brand: 'I started with exactly <span class="pg-num">₹20,000</span>. The trick wasn\'t the money — it was documenting everything, publicly, from day one.'
+};
+var pgOutput = document.getElementById('pgOutput');
+var pgBtns = document.querySelectorAll('.pg-btn');
+function setPg(key) {
+  pgOutput.style.opacity = '0';
+  setTimeout(function(){ pgOutput.innerHTML = pgData[key]; pgOutput.style.opacity = '1'; }, 120);
+  pgBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.key === key); });
+}
+pgBtns.forEach(function(b){ b.addEventListener('click', function(){ setPg(b.dataset.key); }); });
+pgOutput.style.transition = 'opacity 0.2s';
+setPg('zero');
+</script>
+</body>
+</html>
