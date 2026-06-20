@@ -39,7 +39,7 @@ html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--text); font-family: 'Manrope', sans-serif; overflow-x: hidden; line-height: 1.65; font-size: 16px; }
 .container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
 .note { font-family: "Caveat", cursive; font-size: 1.55rem; color: var(--accent-dark); transform: rotate(-1.5deg); display: inline-block; }
- 
+
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
@@ -59,7 +59,10 @@ nav {
   white-space: nowrap; text-decoration: none; display: inline-block;
 }
 .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
- 
+.nav-link { font-size: 0.85rem; color: var(--muted); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+.nav-link:hover { color: var(--text); }
+.nav-right { display: flex; align-items: center; gap: 1.25rem; }
+
 /* ── HERO ── */
 .hero {
   min-height: 92vh;
@@ -86,7 +89,7 @@ nav {
   margin-bottom: 2.75rem; font-weight: 400; line-height: 1.7; max-width: 560px;
 }
 .hero-sub strong { color: var(--text); font-weight: 600; }
- 
+
 /* ── BUTTONS ── */
 .btn-main {
   background: var(--text); color: #fff;
@@ -123,7 +126,7 @@ nav {
   text-decoration: none; display: inline-block;
 }
 .btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
- 
+
 /* ── SECTIONS ── */
 section { padding: 5.5rem 1.5rem; }
 .section-chip {
@@ -140,10 +143,10 @@ section { padding: 5.5rem 1.5rem; }
 .sh.light { color: #fff; }
 .sh.light em { color: var(--accent); }
 .section-sub { font-size: 0.97rem; color: var(--muted); line-height: 1.75; max-width: 560px; }
- 
+
 /* ── CARD BASE ── */
 .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); }
- 
+
 /* ── PROBLEM ── */
 .mistake-box {
   background: var(--bg); border-radius: 20px; padding: 2.5rem;
@@ -152,7 +155,7 @@ section { padding: 5.5rem 1.5rem; }
 .mistake-box p { font-size: 1.05rem; color: var(--text); line-height: 1.75; margin-bottom: 0.9rem; }
 .mistake-box p:last-child { margin-bottom: 0; }
 .hl { background: var(--highlight); padding: 1px 5px; border-radius: 4px; font-weight: 700; }
- 
+
 /* ── CHANNELS ── */
 .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2rem; }
 .ch-card {
@@ -167,7 +170,7 @@ section { padding: 5.5rem 1.5rem; }
 .ch-metric { font-size: 2rem; font-weight: 800; line-height: 1; margin: 0.6rem 0 0.2rem; letter-spacing: -0.5px; }
 .ch-metric-lbl { font-size: 0.7rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.85rem; }
 .ch-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
- 
+
 /* SPOTLIGHT */
 .ch-card.spotlight {
   background: var(--text); border-color: var(--text); color: #fff; position: relative; overflow: hidden;
@@ -193,7 +196,7 @@ section { padding: 5.5rem 1.5rem; }
 .sp-stat { background: rgba(255,255,255,0.07); border-radius: 10px; padding: 0.6rem 0.75rem; flex: 1; }
 .sp-stat .sn { font-size: 0.95rem; font-weight: 800; color: #fff; display: block; }
 .sp-stat .sl { font-size: 0.62rem; color: rgba(255,255,255,0.4); font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; }
- 
+
 /* ── TESTIMONIALS — dark ── */
 .testi-section { background: var(--text); padding: 5.5rem 1.5rem; }
 .testi-inner { max-width: 640px; margin: 2.5rem auto 0; }
@@ -224,14 +227,14 @@ section { padding: 5.5rem 1.5rem; }
 .tnum { background: rgba(255,255,255,0.04); padding: 1.25rem; text-align: center; }
 .tnum .tn-big { font-size: 1.6rem; font-weight: 800; color: var(--accent); line-height: 1; display: block; letter-spacing: -0.5px; }
 .tnum .tn-lbl { font-size: 0.68rem; color: rgba(255,255,255,0.38); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.3rem; display: block; }
- 
+
 /* ── PROCESS ── */
 .process-list { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
 .process-step { display: flex; gap: 1.5rem; align-items: flex-start; }
 .step-num { background: var(--accent-light); color: var(--accent-dark); width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; flex-shrink: 0; }
 .process-text h4 { font-size: 1.1rem; margin-bottom: 0.35rem; font-weight: 800; }
 .process-text p { color: var(--muted); font-size: 0.93rem; }
- 
+
 /* ── REELS CAROUSEL ── */
 .reel-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 1rem; margin-top: 2rem; cursor: grab; }
 .reel-scroll:active { cursor: grabbing; }
@@ -247,7 +250,7 @@ section { padding: 5.5rem 1.5rem; }
 .reel-thumb:hover .play-circle { opacity: 1; }
 .play-circle svg { width: 44px; height: 44px; }
 .reel-label { padding: 0.6rem 0.8rem; font-size: 0.72rem; font-weight: 700; color: var(--accent-dark); display: flex; align-items: center; gap: 0.3rem; }
- 
+
 /* ── PRICING ── */
 .pricing-section { background: var(--bg); }
 .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
@@ -279,12 +282,12 @@ section { padding: 5.5rem 1.5rem; }
 .plan-cta.f:hover { background: var(--accent-dark); box-shadow: 0 4px 16px rgba(92,189,185,0.3); }
 .plan-note { margin-top: 0.6rem; text-align: center; font-size: 0.7rem; color: var(--muted); }
 .plan-card.featured .plan-note { color: rgba(255,255,255,0.28); }
- 
+
 /* ── CTA STRIP ── */
 .cta-strip { background: var(--accent); padding: 3rem 1.5rem; text-align: center; }
 .cta-strip h3 { font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.3px; }
 .cta-strip p { color: rgba(255,255,255,0.82); font-size: 0.93rem; margin-bottom: 1.5rem; line-height: 1.6; max-width: 440px; margin-left: auto; margin-right: auto; }
- 
+
 /* ── CONNECT SECTION ── */
 .connect-section { background: #fff; padding: 5.5rem 1.5rem; }
 .connect-box { max-width: 520px; margin: 2.5rem auto 0; background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; box-shadow: var(--shadow); text-align: center; }
@@ -292,7 +295,7 @@ section { padding: 5.5rem 1.5rem; }
 .connect-box h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.4rem; }
 .connect-box p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.75rem; max-width: 380px; margin-left: auto; margin-right: auto; }
 .connect-note { margin-top: 0.85rem; font-size: 0.75rem; color: var(--muted); }
- 
+
 /* ── PROOF VIDEOS (thinknmedia_) ── */
 .proof-section { background: var(--bg); }
 .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
@@ -305,13 +308,13 @@ section { padding: 5.5rem 1.5rem; }
 .proof-body { padding: 1rem; }
 .proof-body strong { font-size: 0.85rem; font-weight: 800; display: block; margin-bottom: 0.25rem; }
 .proof-body p { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
- 
+
 footer { padding: 3.5rem 2rem; text-align: center; color: var(--muted); font-size: 0.9rem; background: var(--bg); border-top: 1px solid var(--border); }
 .footer-logo { font-weight: 800; font-size: 1.3rem; color: var(--text); margin-bottom: 0.4rem; letter-spacing: -0.3px; }
 .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; flex-wrap: wrap; }
 .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; font-weight: 600; transition: color 0.2s; }
 .footer-links a:hover { color: var(--accent); }
- 
+
 @media (max-width: 700px) {
   section { padding: 4rem 1rem; }
   .hero { padding: 8rem 1rem 4rem; }
@@ -334,20 +337,23 @@ footer { padding: 3.5rem 2rem; text-align: center; color: var(--muted); font-siz
 </style>
 </head>
 <body>
- 
+
 <!-- ① NAV -->
 <nav>
   <div class="nav-logo">Shekar.</div>
-  <a class="nav-cta" href="https://forms.gle/LrEXDdyyxGzvheFz7" target="_blank" rel="noopener">Tell me about your page →</a>
+  <div class="nav-right">
+    <a href="shekar-about.html" class="nav-link">About me</a>
+    <a class="nav-cta" href="https://forms.gle/LrEXDdyyxGzvheFz7" target="_blank" rel="noopener">Tell me about your page →</a>
+  </div>
 </nav>
- 
+
 <!-- ② HERO -->
 <header class="hero">
   <div class="hero-eyebrow">Working with 5 people only — always</div>
   <h1>Posting every day but Instagram isn't <em>doing anything</em> for you?</h1>
   <p class="hero-sub">Whether you're building an audience, getting clients, or growing a brand — you don't need viral moments. You need the <strong>right people</strong> finding you, trusting you, and taking action.</p>
   <a class="btn-main" href="https://forms.gle/LrEXDdyyxGzvheFz7" target="_blank" rel="noopener">Tell me about your page — I'll reach out</a>
- 
+
   <!-- hero social proof numbers -->
   <div style="display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-top:4rem;padding-top:2.5rem;border-top:1px solid var(--border);width:100%;max-width:700px">
     <div style="text-align:center">
@@ -368,7 +374,7 @@ footer { padding: 3.5rem 2rem; text-align: center; color: var(--muted); font-siz
     </div>
   </div>
 </header>
- 
+
 <!-- ③ PROBLEM -->
 <section style="background:#fff">
   <div class="container">
@@ -382,7 +388,7 @@ footer { padding: 3.5rem 2rem; text-align: center; color: var(--muted); font-siz
     </div>
   </div>
 </section>
- 
+
 <!-- ④ MY CHANNELS -->
 <section style="background:var(--bg)">
   <div class="container">
@@ -430,7 +436,7 @@ footer { padding: 3.5rem 2rem; text-align: center; color: var(--muted); font-siz
     </div>
   </div>
 </section>
- 
+
 <!-- ⑤ TESTIMONIALS — dark -->
 <section class="testi-section">
   <div class="container" style="text-align:center">
@@ -465,7 +471,7 @@ footer { padding: 3.5rem 2rem; text-align: center; color: var(--muted); font-siz
     </div>
   </div>
 </section>
- 
+
 <!-- ⑥ PROCESS -->
 <section style="background:var(--bg)">
   <div class="container">
@@ -497,7 +503,7 @@ footer { padding: 3.5rem 2rem; text-align: center; color: var(--muted); font-siz
     </div>
   </div>
 </section>
- 
+
 <!-- ⑦ REELS CAROUSEL -->
 <section style="background:#fff;overflow:hidden">
   <div class="container">
@@ -509,7 +515,7 @@ footer { padding: 3.5rem 2rem; text-align: center; color: var(--muted); font-siz
     </div>
   </div>
 </section>
- 
+
 <!-- ⑧ PRICING -->
 <section class="pricing-section" id="plans">
   <div class="container">
@@ -556,14 +562,14 @@ footer { padding: 3.5rem 2rem; text-align: center; color: var(--muted); font-siz
     </div>
   </div>
 </section>
- 
+
 <!-- ⑨ CTA STRIP -->
 <div class="cta-strip">
   <h3>Not sure which plan is right?</h3>
   <p>Fill in the form and I'll tell you honestly which one fits your situation — or whether now is the right time at all.</p>
   <a class="btn-white" href="https://forms.gle/LrEXDdyyxGzvheFz7" target="_blank" rel="noopener">Fill in the form — I'll reach out →</a>
 </div>
- 
+
 <!-- ⑩ CONNECT / GOOGLE FORM SECTION -->
 <section class="connect-section" id="book-call">
   <div class="container" style="text-align:center">
@@ -582,7 +588,7 @@ footer { padding: 3.5rem 2rem; text-align: center; color: var(--muted); font-siz
     </div>
   </div>
 </section>
- 
+
 <!-- ⑪ PROOF VIDEOS — thinknmedia_ -->
 <section class="proof-section">
   <div class="container">
@@ -592,7 +598,7 @@ footer { padding: 3.5rem 2rem; text-align: center; color: var(--muted); font-siz
     <div class="proof-grid" id="proofRow"></div>
   </div>
 </section>
- 
+
 <footer>
   <div class="footer-logo">Shekar.</div>
   <p>© 2024 Shekar. All rights reserved.</p>
@@ -603,10 +609,10 @@ footer { padding: 3.5rem 2rem; text-align: center; color: var(--muted); font-siz
     <a href="https://www.instagram.com/thinknmedia_/" target="_blank">@thinknmedia_</a>
   </div>
 </footer>
- 
+
 <script>
 var PLAY = '<svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(0,0,0,0.42)"/><polygon points="21,17 37,26 21,35" fill="#fff"/></svg>';
- 
+
 var reels = [
   { url:'https://www.instagram.com/reel/C6eA3jwJpDk/', code:'C6eA3jwJpDk' },
   { url:'https://www.instagram.com/reel/DYKMr4FTKJc/', code:'DYKMr4FTKJc' },
@@ -617,7 +623,7 @@ var proofPosts = [
   { url:'https://www.instagram.com/p/DZO_qTUKFAX/', code:'DZO_qTUKFAX', title:'How the growth actually happened', desc:'Breaking down the exact decisions behind the numbers — @thinknmedia_' },
   { url:'https://www.instagram.com/p/DZUrbs9Kh2e/', code:'DZUrbs9Kh2e', title:"What I'd do differently from scratch", desc:"The real mistakes, the experiments, what I'd skip — @thinknmedia_" }
 ];
- 
+
 function thumbSrcs(code) {
   return [
     'https://www.instagram.com/p/'+code+'/media/?size=l',
@@ -630,7 +636,7 @@ function tryLoad(img, srcs, i) {
   img.src = srcs[i];
   img.onerror = function(){ tryLoad(img, srcs, i+1); };
 }
- 
+
 function buildReel(r) {
   var a = document.createElement('a');
   a.className='reel-thumb'; a.href=r.url; a.target='_blank'; a.rel='noopener';
@@ -655,12 +661,12 @@ function buildProof(p) {
   body.innerHTML='<strong>'+p.title+' →</strong><p>'+p.desc+'</p>';
   a.appendChild(wrap); a.appendChild(body); return a;
 }
- 
+
 var rr=document.getElementById('reelRow');
 reels.forEach(function(r){ rr.appendChild(buildReel(r)); });
 var pr=document.getElementById('proofRow');
 proofPosts.forEach(function(p){ pr.appendChild(buildProof(p)); });
- 
+
 // Drag scroll on carousel
 (function(){
   var el=document.querySelector('.reel-scroll');
@@ -673,3 +679,4 @@ proofPosts.forEach(function(p){ pr.appendChild(buildProof(p)); });
 </script>
 </body>
 </html>
+
