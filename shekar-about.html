@@ -174,9 +174,87 @@ nav { position: relative; z-index: 50; padding: 1.5rem 1.75rem 0.5rem; display: 
 .washi-divider { height: 22px; background: repeating-linear-gradient(135deg, var(--teal-light) 0 10px, var(--pink-light) 10px 20px); margin: 1.5rem -2.25rem; opacity: 0.6; }
 
 /* sticky notes timeline - compact corkboard style */
-.cork-notes { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0; }
+/* ── first video card — torn YouTube polaroid style ── */
+.first-video-card {
+  display: block; text-decoration: none; margin-top: 1.25rem;
+  background: #fff; border: 2px solid var(--ink);
+  border-radius: 8px; overflow: hidden;
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: rotate(-1.5deg);
+  transition: transform 0.2s, box-shadow 0.15s;
+  position: relative;
+}
+.first-video-card:hover { transform: rotate(0deg) translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink); }
+.fvc-thumb {
+  width: 100%; height: 90px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  display: flex; align-items: center; justify-content: center; position: relative;
+}
+.fvc-play {
+  width: 36px; height: 36px; background: var(--coral); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; color: #fff; padding-left: 3px;
+}
+.fvc-year-badge {
+  position: absolute; top: 6px; left: 8px;
+  font-size: 0.6rem; font-weight: 800; color: rgba(255,255,255,0.35);
+  letter-spacing: 1.5px; text-transform: uppercase;
+  background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 3px;
+}
+.fvc-warn {
+  position: absolute; top: 6px; right: 8px;
+  background: var(--coral); color: #fff; font-size: 0.55rem;
+  font-weight: 900; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.5px;
+  text-transform: uppercase; transform: rotate(2deg);
+}
+.fvc-body { padding: 0.7rem 0.85rem 0.85rem; background: #fff; }
+.fvc-label { font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--coral-dark); margin-bottom: 0.2rem; }
+.fvc-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1rem; color: var(--ink); margin-bottom: 0.3rem; line-height: 1.3; }
+.fvc-quote { font-size: 0.95rem; color: var(--muted); }
+
+/* ── brand grid ── */
+.brand-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.brand-chip-sm {
+  font-weight: 700; font-size: 0.8rem; border: 1.5px solid var(--ink); background: var(--paper);
+  padding: 0.4rem 0.85rem; border-radius: 100px;
+  box-shadow: 2px 2px 0 rgba(35,32,23,0.1);
+}
+.brand-chip-sm:nth-child(odd) { transform: rotate(-1deg); }
+.brand-chip-sm:nth-child(even) { transform: rotate(0.8deg); }
+.brand-chip-sm.more { background: var(--mustard-light); font-style: italic; }
+
+/* ── playground scroll wrapper for mobile ── */
+.pg-scroll-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -1.75rem; padding: 0 1.75rem 0.25rem; }
+.pg-scroll-wrap::-webkit-scrollbar { display: none; }
+.pg-row { display: flex; gap: 0.5rem; width: max-content; padding-bottom: 0.25rem; }
+.pg-btn {
+  background: var(--bg); border: 2px solid var(--ink); color: var(--ink);
+  padding: 0.65rem 1.2rem; border-radius: 100px; font-weight: 700; font-size: 0.85rem; cursor: pointer;
+  font-family: 'Manrope', sans-serif; transition: all 0.2s; white-space: nowrap;
+}
+.pg-btn:hover, .pg-btn.active { background: var(--coral); border-color: var(--coral); color: #fff; }
+.pg-output {
+  background: var(--bg); border-radius: 8px; padding: 1.5rem; min-height: 100px;
+  display: flex; align-items: center; margin-top: 1rem;
+}
+.pg-output-text { font-family: 'Fraunces', serif; font-size: 1.1rem; font-style: italic; line-height: 1.65; }
+.pg-output-text .pg-num { color: var(--coral-dark); font-weight: 700; font-style: normal; }
+
+/* ── cork notes: 5 notes, tighter ── */
+.cork-notes { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0; }
+.fact-pill {
+  background: var(--mustard-light); border: 2px solid var(--ink); border-radius: 8px;
+  padding: 0.55rem 0.9rem; display: flex; flex-direction: column; align-items: center; text-align: center;
+  box-shadow: 2px 2px 0 rgba(35,32,23,0.12); min-width: 86px;
+}
+.fact-pill:nth-child(2n) { background: var(--pink-light); transform: rotate(-1deg); }
+.fact-pill:nth-child(3n) { background: var(--teal-light); transform: rotate(1deg); }
+.fact-pill.wide { min-width: 200px; flex: 1; }
+.fp-num { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.2rem; line-height: 1; color: var(--ink); }
+.fp-lbl { font-size: 0.66rem; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; margin-top: 0.25rem; line-height: 1.3; }
+
 .cork-note {
-  background: var(--mustard-light); padding: 1rem 1.1rem; width: 180px;
+  background: var(--mustard-light); padding: 1rem 1.1rem; width: 160px;
   box-shadow: 2px 4px 10px rgba(0,0,0,0.13); position: relative; font-size: 0.83rem;
 }
 .cork-note:nth-child(1) { transform: rotate(-3deg); background: var(--pink-light); }
@@ -218,6 +296,19 @@ nav { position: relative; z-index: 50; padding: 1.5rem 1.75rem 0.5rem; display: 
 
 /* ── PAGE 3: RECEIPT + BRANDS combined ── */
 .combo-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 2rem; }
+/* ── REVENUE TREE — stacked bar visual ── */
+/* ── single segmented revenue bar ── */
+.single-bar-track {
+  display: flex; height: 28px; border: 2px solid var(--ink); border-radius: 100px;
+  overflow: hidden; box-shadow: 2px 2px 0 rgba(35,32,23,0.12); margin-bottom: 1rem;
+}
+.single-bar-seg { height: 100%; transition: width 1.2s ease; position: relative; }
+.single-bar-seg:not(:last-child) { border-right: 2px solid var(--ink); }
+.bar-legend { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-bottom: 0; }
+.legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.84rem; color: var(--ink); }
+.legend-item strong { font-family: 'Fraunces', serif; color: var(--coral-dark); margin-left: 0.2rem; }
+.legend-dot { width: 11px; height: 11px; border-radius: 3px; border: 1.5px solid var(--ink); flex-shrink: 0; }
+
 .mini-receipt { background: var(--bg); border: 2px dashed var(--ink); border-radius: 8px; padding: 1.5rem; }
 .mr-title { font-family: 'Permanent Marker', cursive; font-size: 0.9rem; text-align: center; margin-bottom: 1rem; padding-bottom: 0.85rem; border-bottom: 2px dashed var(--ink); }
 .mr-row { display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 0.85rem; border-bottom: 1px dotted #ccc; }
@@ -238,20 +329,24 @@ nav { position: relative; z-index: 50; padding: 1.5rem 1.75rem 0.5rem; display: 
 .sig-mini strong { display: block; font-family: 'Fraunces', serif; font-size: 0.92rem; margin-bottom: 0.25rem; }
 .sig-mini p { color: var(--muted); line-height: 1.5; font-size: 0.78rem; }
 
-/* ── PAGE 4: PLAYGROUND — small interactive ── */
-.pg-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.25rem; margin-bottom: 1.25rem; }
-.pg-btn {
-  background: var(--bg); border: 2px solid var(--ink); color: var(--ink);
-  padding: 0.5rem 1rem; border-radius: 100px; font-weight: 700; font-size: 0.8rem; cursor: pointer;
-  font-family: 'Manrope', sans-serif; transition: all 0.2s;
-}
-.pg-btn:hover, .pg-btn.active { background: var(--coral); border-color: var(--coral); color: #fff; }
-.pg-output { background: var(--bg); border-radius: 8px; padding: 1.25rem 1.5rem; min-height: 90px; display: flex; align-items: center; }
-.pg-output-text { font-family: 'Fraunces', serif; font-size: 1.05rem; font-style: italic; line-height: 1.55; }
-.pg-output-text .pg-num { color: var(--coral-dark); font-weight: 700; font-style: normal; }
-
 /* off duty - postcard style */
 .postcard-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 1.25rem; }
+/* ── goggins callout — strong highlight box ── */
+.goggins-box {
+  background: var(--ink); border-radius: 14px; padding: 2rem; position: relative; overflow: hidden;
+}
+.goggins-box::before {
+  content: '💪'; position: absolute; font-size: 8rem; right: -1rem; bottom: -2rem;
+  opacity: 0.06; pointer-events: none;
+}
+.goggins-tag {
+  display: inline-block; font-family: 'Permanent Marker', cursive; font-size: 0.75rem;
+  color: var(--coral); background: rgba(232,99,58,0.15); padding: 0.3rem 0.8rem;
+  border-radius: 100px; margin-bottom: 0.85rem; transform: rotate(-1deg);
+}
+.goggins-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.3px; }
+.goggins-text { font-size: 0.92rem; color: rgba(251,244,233,0.7); line-height: 1.8; margin-bottom: 1rem; position: relative; }
+
 .postcard { background: var(--bg); border: 1.5px solid #d8cfb8; border-radius: 6px; padding: 1.1rem; position: relative; }
 .postcard::before { content: '✉'; position: absolute; top: 0.6rem; right: 0.7rem; opacity: 0.2; font-size: 1rem; }
 .postcard h5 { font-family: 'Caveat', cursive; font-size: 1.2rem; color: var(--coral-dark); margin-bottom: 0.4rem; }
@@ -290,14 +385,18 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
   .polaroid { display: none; }
   .sticky.left-sticky { display: none; }
   .diary-grid { grid-template-columns: 1fr; }
+  .page [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
   .combo-grid { grid-template-columns: 1fr; }
   .ticket { grid-template-columns: 1fr; }
   .ticket .t-left { border-right: none; padding-right: 0; border-bottom: 2px dashed var(--ink); padding-bottom: 0.75rem; margin-bottom: 0.75rem; }
   .ticket .t-stats { justify-content: flex-start; }
-  .postcard-grid { grid-template-columns: 1fr; }
+  .postcard-grid { grid-template-columns: 1fr 1fr; }
+  .brand-grid { gap: 0.4rem; }
+  .brand-chip-sm { font-size: 0.75rem; padding: 0.35rem 0.7rem; }
   .paths-grid { grid-template-columns: 1fr; }
   .page { padding: 1.75rem 1.25rem; }
-  .cork-notes { flex-direction: column; }
+  .cork-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .cork-note { width: auto; }
   .cork-note { width: auto; }
 }
 </style>
@@ -320,20 +419,20 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
 
     <div class="cover-headline">
       <div class="fail-stamp">10th — FAILED</div>
+      <div class="fail-stamp" style="background:var(--teal-light);color:var(--teal);transform:rotate(3deg)">INTER — FAILED</div>
       <div class="fail-stamp coral-s">DEGREE — NEVER STARTED</div>
-      <h1 class="cover-h1">Most of this started<br>because I had <span class="ital">nothing else going for me.</span></h1>
-      <p class="cover-sub">I'm Shekar. Three Instagram pages, a tiny clothing brand, and a coaching practice — all built off a phone, a stubborn streak, and no plan B.</p>
-      <p class="script" style="font-size:1.2rem;color:var(--coral-dark);margin:-0.75rem 0 1.25rem">if a failed-Intermediate 23 year old can do this — literally anyone can.</p>
+      <h1 class="cover-h1">Nobody gave me a chance.<br><span class="ital">So I stopped waiting for one.</span></h1>
+      <p class="cover-sub">I'm Shekar. Failed school three times. No degree, no money, one cheap phone. Somehow ended up with three Instagram pages, a clothing brand, and ₹17 lakhs earned — in 9 months — from figuring things out the hard way.</p>
+      <p class="script" style="font-size:1.2rem;color:var(--coral-dark);margin:-0.75rem 0 1.25rem">if I can do this from where I started, you probably have more going for you than you think.</p>
       <div class="cover-btns">
-        <a href="#story" class="btn-stamp">Flip the page →</a>
-        <a href="https://forms.gle/LrEXDdyyxGzvheFz7" target="_blank" rel="noopener" class="btn-outline-stamp">Let's talk</a>
+        <a href="#story" class="btn-stamp">Read the story ↓</a>
       </div>
 
       <div class="cover-stats">
         <div class="stat-chip"><div class="sv">10+</div><div class="sl">pages tried</div></div>
         <div class="stat-chip"><div class="sv">4</div><div class="sl">active today</div></div>
-        <div class="stat-chip"><div class="sv">₹17L+</div><div class="sl">earned</div></div>
-        <div class="stat-chip"><div class="sv">5 yrs</div><div class="sl">no breaks</div></div>
+        <div class="stat-chip"><div class="sv">30–50M</div><div class="sl">monthly views</div></div>
+        <div class="stat-chip"><div class="sv">₹17L+</div><div class="sl">in 9 months</div></div>
       </div>
     </div>
 
@@ -362,53 +461,65 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
     <div class="page-tab">page one — the messy bit</div>
     <div class="diary-grid">
       <div class="diary-text">
-        <p>I'm not going to dress this up. I failed my Intermediate (12th). Badly enough that we couldn't pay the final college fees — my marksheet and transfer certificate are still sitting with that college, unclaimed. No money for a degree, and my family didn't have it either. So I just... stopped. I wasn't good at studying anyway. What was the point?</p>
-        <p>I was 17, broke, with one phone — an <strong>Oppo A37</strong> — and a lot of free time I didn't know what to do with. My brother was the one who said it: "just try YouTube, what's the worst that happens." So we go there.</p>
-        <p>That first video is genuinely bad. No plan, no idea what a niche even was. Four years of posting and I made <strong>not even one rupee</strong>. I tried every "content coach," every monetization hack channel, even tried fake subscribers once out of pure desperation — nothing worked. Looking back, none of it was ever going to.</p>
-        <p>It was only after I slowed down on @thinknwear_ that things actually clicked — really understanding content instead of chasing hacks. In the <strong>last 9 months alone</strong>, that understanding turned into ₹17L+. The four years before that taught me everything the 9 months needed.</p>
+        <p>I failed 10th. Then I failed Inter.</p>
+
+        <p>Both times the real reason was money. Final year exams — we hadn't paid the fees. We went and asked, explained the situation, somehow got a hall ticket. I sat the exam. Passed. The certificate is still sitting in that college office. We just never had the ₹3,000 to go collect it. So technically, no degree. Not because I didn't try — just that even getting proof you passed, costs money we didn't have.</p>
+
+        <div class="fact-strip">
+          <div class="fact-pill"><span class="fp-num">17</span><span class="fp-lbl">years old</span></div>
+          <div class="fact-pill"><span class="fp-num">1</span><span class="fp-lbl">Oppo A37</span></div>
+          <div class="fact-pill"><span class="fp-num">₹0</span><span class="fp-lbl">in pocket</span></div>
+        </div>
+
+        <p>My brother said it like there was nothing to think about: <em>"just try YouTube. What else are you doing?"</em></p>
+
+        <a class="first-video-card" href="https://youtu.be/YqQnGAwPm6A?si=PraFW2TEggig-NQE" target="_blank" rel="noopener">
+          <div class="fvc-thumb">
+            <div class="fvc-play">▶</div>
+            <div class="fvc-year-badge">2019</div>
+            <div class="fvc-warn">⚠ viewer discretion</div>
+          </div>
+          <div class="fvc-body">
+            <div class="fvc-label">the origin story nobody asked for</div>
+            <div class="fvc-title">Bad quality. Zero views. Still posted it. That's literally the whole lesson.</div>
+            <div class="fvc-quote script">"everyone starts somewhere. mine just had worse lighting."</div>
+          </div>
+        </a>
+
+        <p>So I just kept going. Uploaded whatever made sense that day. 0 views. 3 views. 7 views on a good week. Paid one guy to coach me — he just said things I already knew but louder. Tried every "grow fast" shortcut I could find on YouTube. Bought fake subscribers once. Watched a number go up that meant nothing.</p>
+
+        <p>Four years. Not one rupee came in.</p>
+
+        <p>What finally changed — it wasn't posting more, or working harder, I was already doing both. It was just one thing: actually understanding <em>why</em> someone watches a video till the end. That's it. ₹17 lakhs in the 9 months after I figured that out.</p>
       </div>
       <div>
         <div class="washi-divider"></div>
         <div class="cork-notes">
-          <div class="cork-note"><span class="cn-pin"></span><span class="cn-year">5 yrs ago</span><p>Posted my first-ever video on YouTube. 17, broke, an Oppo A37, and my brother's "just try it."</p></div>
-          <div class="cork-note"><span class="cn-pin"></span><span class="cn-year">3 yrs ago</span><p>Brought the same channel, same niche, to Instagram as @era_of_shekar. Still just reps, no plan.</p></div>
-          <div class="cork-note"><span class="cn-pin"></span><span class="cn-year">recent</span><p>@somashekarx hit 10k followers in 30 days. Started coaching others, on @thinknmedia_.</p></div>
+          <div class="cork-note"><span class="cn-pin"></span><span class="cn-year">5 yrs ago</span><p>First video. Ever. Oppo A37, 17 years old, my brother's nudge.</p></div>
+          <div class="cork-note"><span class="cn-pin"></span><span class="cn-year">3 yrs ago</span><p>Same channel, same niche, now also on Instagram — @era_of_shekar.</p></div>
+          <div class="cork-note"><span class="cn-pin"></span><span class="cn-year">1 yr ago</span><p>Started @thinknwear_. This is the one that actually worked.</p></div>
+          <div class="cork-note"><span class="cn-pin"></span><span class="cn-year">few months back</span><p>Started @somashekarx with ₹20k. Hit 10k followers in 30 days. 270X return.</p></div>
+          <div class="cork-note"><span class="cn-pin"></span><span class="cn-year">now</span><p>Teaching everything I figured out — one-on-one, on @thinknmedia_.</p></div>
         </div>
-        <a class="diary-photo-link" href="https://youtu.be/YqQnGAwPm6A?si=PraFW2TEggig-NQE" target="_blank" rel="noopener">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          watch the actual first video
-        </a>
-        <p class="script" style="font-size:1.15rem;color:var(--coral-dark);margin-top:0.85rem">fair warning — it's genuinely rough. that's the whole point.</p>
       </div>
     </div>
 
     <div class="washi-divider"></div>
 
-    <p style="font-size:0.95rem;color:var(--muted);line-height:1.8">Somewhere in those four broke years, I also tried building <strong style="color:var(--ink)">nine different pages</strong> — open a channel, decide I'd "figured out" the niche, watch it go nowhere, delete it, start again. Most of them never made it past a few posts. That's not a footnote — that's most of the actual work.</p>
+    <div class="fact-strip" style="margin-bottom:0">
+      <div class="fact-pill wide"><span class="fp-num">9</span><span class="fp-lbl">other pages, opened and quietly deleted</span></div>
+      <div class="fact-pill wide"><span class="fp-num">₹20k</span><span class="fp-lbl">@somashekarx started on — 10k followers in 30 days</span></div>
+    </div>
+    <p style="font-size:0.9rem;color:var(--muted);line-height:1.8;margin-top:1rem">The 9 deleted pages aren't a footnote. That's most of the actual work. Now I teach what I learned. One-on-one, on <strong style="color:var(--ink)">@thinknmedia_</strong>. <a href="shekar-coaching.html" style="color:var(--coral-dark);font-weight:700;text-decoration:none;border-bottom:2px solid var(--coral)">See how that works →</a></p>
   </div>
 
   <!-- PAGE 2: CHANNELS AS TICKETS -->
   <div class="page" id="channels">
     <div class="page-tab">page two — the proof</div>
-    <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;margin-bottom:0.25rem">Three pages. Three reasons to learn.</h3>
+    <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;margin-bottom:0.25rem">Three pages. Three different fights.</h3>
     <p style="font-size:0.86rem;color:var(--muted)">Tap any handle — every number here is real and public.</p>
 
     <div class="tickets-row">
-      <div class="ticket">
-        <div class="t-left">
-          <span class="t-tag">est. ~3 yrs ago · the first one</span>
-          <div class="t-name">Era of Shekar</div>
-          <a href="https://www.instagram.com/era_of_shekar/" target="_blank" class="t-handle">@era_of_shekar ↗</a>
-          <p class="t-desc">Where I posted daily without a plan, just to build the habit. Fitness niche, also on YouTube.</p>
-        </div>
-        <div class="t-stats">
-          <div class="t-stat"><div class="tsv">26k</div><div class="tsl">IG followers</div></div>
-          <div class="t-stat"><div class="tsv">3.9M</div><div class="tsl">views</div></div>
-          <div class="t-stat"><div class="tsv">20.1k</div><div class="tsl">YT subs</div></div>
-          <div class="t-stat"><div class="tsv">611</div><div class="tsl">videos</div></div>
-        </div>
-      </div>
-
       <div class="ticket">
         <div class="t-left">
           <span class="t-tag">est. ~1 yr ago · where I got good</span>
@@ -421,6 +532,21 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
           <div class="t-stat"><div class="tsv">450k</div><div class="tsl">avg views</div></div>
           <div class="t-stat"><div class="tsv">23.5M</div><div class="tsl">views/30d</div></div>
           <div class="t-stat"><div class="tsv">4.7M</div><div class="tsl">reach</div></div>
+        </div>
+      </div>
+
+      <div class="ticket">
+        <div class="t-left">
+          <span class="t-tag">est. ~3 yrs ago · the first one</span>
+          <div class="t-name">Era of Shekar</div>
+          <a href="https://www.instagram.com/era_of_shekar/" target="_blank" class="t-handle">@era_of_shekar ↗</a>
+          <p class="t-desc">Where I posted daily without a plan, just to build the habit. Fitness niche, also on YouTube.</p>
+        </div>
+        <div class="t-stats">
+          <div class="t-stat"><div class="tsv">26k</div><div class="tsl">IG followers</div></div>
+          <div class="t-stat"><div class="tsv">3.9M</div><div class="tsl">views</div></div>
+          <div class="t-stat"><div class="tsv">20.1k</div><div class="tsl">YT subs</div></div>
+          <div class="t-stat"><div class="tsv">611</div><div class="tsl">videos</div></div>
         </div>
       </div>
 
@@ -441,22 +567,47 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
     </div>
   </div>
 
-  <!-- PAGE 3: RECEIPT + BRANDS + SIGNATURE -->
+  <!-- PAGE 3: REVENUE TREE + BRANDS + SIGNATURE -->
   <div class="page" id="brands">
-    <div class="page-tab">page three — the receipts</div>
+    <div class="page-tab">page three — where the money came from</div>
+    <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;margin-bottom:0.3rem">₹17L+, last 9 months. Here's the actual split.</h3>
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.5rem">No magic single source. One bar, three streams.</p>
+
+    <div class="single-bar-track">
+      <div class="single-bar-seg" style="width:29.5%;background:var(--coral)" title="Fitness coaching — ~₹5L"></div>
+      <div class="single-bar-seg" style="width:1.5%;background:var(--teal)" title="YouTube ad revenue — ~₹25k"></div>
+      <div class="single-bar-seg" style="width:69%;background:var(--mustard)" title="Brand collabs + rest — ~₹11.7L+"></div>
+    </div>
+    <div class="bar-legend">
+      <div class="legend-item"><span class="legend-dot" style="background:var(--coral)"></span>Fitness coaching <strong>~₹5L</strong></div>
+      <div class="legend-item"><span class="legend-dot" style="background:var(--teal)"></span>YouTube ads <strong>~₹25k</strong></div>
+      <div class="legend-item"><span class="legend-dot" style="background:var(--mustard)"></span>Brand collabs + rest <strong>~₹11.7L+</strong></div>
+    </div>
+
+    <div class="washi-divider"></div>
+
     <div class="combo-grid">
       <div class="mini-receipt">
         <div class="mr-title">5 YEARS, ITEMIZED</div>
-        <div class="mr-row"><span class="l">Earned from content</span><span class="v coral">₹17L+</span></div>
+        <div class="mr-row"><span class="l">Earned, last 9 months</span><span class="v coral">₹17L+</span></div>
         <div class="mr-row"><span class="l">Brand return</span><span class="v">270X</span></div>
         <div class="mr-row"><span class="l">Followers, total</span><span class="v">200k+</span></div>
-        <div class="mr-row"><span class="l">Pages built</span><span class="v">3</span></div>
-        <div class="mr-row"><span class="l">Exams failed</span><span class="v">2</span></div>
+        <div class="mr-row"><span class="l">Pages tried</span><span class="v">10+</span></div>
+        <div class="mr-row"><span class="l">Pull-ups, one mad night</span><span class="v">2,800</span></div>
       </div>
       <div class="brands-stack">
-        <div>
-          <div class="brand-stamp-lg">Snitch</div>
-          <p class="brand-sub-note">+ a few more — ask me on a call</p>
+        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Brands worked with</p>
+        <div class="brand-grid">
+          <div class="brand-chip-sm">Snitch</div>
+          <div class="brand-chip-sm">Reginald Men</div>
+          <div class="brand-chip-sm">Dr. Seth</div>
+          <div class="brand-chip-sm">Derma Co</div>
+          <div class="brand-chip-sm">Oziva</div>
+          <div class="brand-chip-sm">White House</div>
+          <div class="brand-chip-sm">Deconstruct</div>
+          <div class="brand-chip-sm">Tru Hair & Skin</div>
+          <div class="brand-chip-sm">Mama Earth</div>
+          <div class="brand-chip-sm more">+ more</div>
         </div>
         <div class="sig-mini-row">
           <div class="sig-mini"><strong>🛍️ Signature move</strong><p>IKEA bag → trousers. Creativity over budget, every time.</p></div>
@@ -466,49 +617,59 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
     </div>
   </div>
 
-  <!-- PAGE 4: PLAYGROUND -->
+  <!-- PAGE 4: PLAYGROUND + OFF DUTY + GOGGINS -->
   <div class="page">
-    <div class="page-tab">page four — try it yourself</div>
-    <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;margin-bottom:0.4rem">Here's how I'd think about your problem.</h3>
-    <p style="font-size:0.85rem;color:var(--muted)">Pick a starting point — this is the actual filter I run every idea through.</p>
-    <div class="pg-row" id="pgControls">
-      <button class="pg-btn active" data-key="zero">starting from zero</button>
-      <button class="pg-btn" data-key="stuck">stuck for months</button>
-      <button class="pg-btn" data-key="viral">one viral hit, nothing since</button>
-      <button class="pg-btn" data-key="brand">launching on ₹20k</button>
-    </div>
-    <div class="pg-output"><div class="pg-output-text" id="pgOutput"></div></div>
-  </div>
+    <div class="page-tab">page four — honestly</div>
 
-  <!-- PAGE 5: OFF DUTY -->
-  <div class="page">
-    <div class="page-tab">page five — off the clock</div>
-    <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;margin-bottom:0.25rem">A few things that have nothing to do with any of this.</h3>
-    <div class="postcard-grid">
-      <div class="postcard"><h5>mornings</h5><p>Bad coffee, decent ideas. My best concepts show up between waking up and actually getting out of bed.</p></div>
-      <div class="postcard"><h5>still bad at</h5><p>Editing. Five years in, still re-cut things four or five times before they feel right.</p></div>
-      <div class="postcard"><h5>nobody asks</h5><p>My mom still doesn't fully get what I do. She's proud anyway. Matters more than the numbers above.</p></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;margin-bottom:0">
+      <div>
+        <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;margin-bottom:0.25rem">Here's how I'd think about your situation.</h3>
+        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem">Not advice. Just what I'd actually do.</p>
+        <div class="pg-scroll-wrap">
+          <div class="pg-row" id="pgControls">
+            <button class="pg-btn active" data-key="zero">Starting from zero</button>
+            <button class="pg-btn" data-key="stuck">Stuck for months</button>
+            <button class="pg-btn" data-key="viral">One viral, nothing since</button>
+            <button class="pg-btn" data-key="brand">Launching on ₹20k</button>
+          </div>
+        </div>
+        <div class="pg-output"><div class="pg-output-text" id="pgOutput"></div></div>
+      </div>
+
+      <div>
+        <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;margin-bottom:1rem">A few things nobody asks.</h3>
+        <div class="postcard-grid" style="grid-template-columns:1fr">
+          <div class="postcard"><h5>mornings</h5><p>I get my best ideas between waking up and actually getting up. So I stay in bed a bit longer and call it work.</p></div>
+          <div class="postcard"><h5>still bad at</h5><p>Editing. Five years in. Still re-cut the same video four times before it feels right.</p></div>
+          <div class="postcard"><h5>what matters more</h5><p>My mom still isn't sure what I do. She's proud anyway. That beats every number on this page.</p></div>
+        </div>
+      </div>
     </div>
 
     <div class="washi-divider"></div>
 
-    <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;margin-bottom:0.6rem">I also just like testing my own limits.</h3>
-    <p style="font-size:0.92rem;color:var(--muted);line-height:1.75;margin-bottom:1rem">David Goggins holds the world record for most pull-ups in 17 hours — 4,030. I went live on YouTube and tried to attempt it myself. No real expectation anyone in India would care about a pull-up world record attempt, and honestly, barely anyone did — under 1,000 views. That was fine. I wasn't doing it for the views.</p>
-    <p style="font-size:0.92rem;color:var(--muted);line-height:1.75;margin-bottom:1.25rem">I chased it until my body said stop — a minor bicep tear ended it at <strong style="color:var(--ink)">2,800 pull-ups</strong>. Not the record. Still the most pull-ups I've ever seen anyone around me even attempt.</p>
-    <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-      <a class="diary-photo-link" href="https://www.youtube.com/live/96PInllbg4s?si=4evH6tK-U8mZoqpa" target="_blank" rel="noopener">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        watch the full live attempt
-      </a>
-      <a class="btn-outline-stamp" href="https://youtu.be/c5F3gAGRrwM?si=V0ooaJAKpE1mHbwk" target="_blank" rel="noopener" style="text-decoration:none">
-        watch the summary
-      </a>
+    <div class="goggins-box">
+      <div class="goggins-tag">★ the unhinged one</div>
+      <h3 class="goggins-title">I also just like testing my own limits.</h3>
+      <div style="display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:1.1rem">
+        <div class="fail-stamp" style="background:var(--teal-light);color:var(--teal);transform:rotate(-2deg)">GOGGINS RECORD: 4,030</div>
+        <div class="fail-stamp coral-s" style="transform:rotate(2deg)">MY ATTEMPT: 2,800</div>
+      </div>
+      <p class="goggins-text">David Goggins holds the world record for most pull-ups in 17 hours — 4,030. I decided to try it live on YouTube. Under 1,000 people watched. That was fine. I wasn't doing it for the views.</p>
+      <p class="goggins-text">I got to 2,800 before my bicep started tearing. Stopped. Not the record. Still the most pull-ups I've ever seen anyone in my city attempt in one sitting. I don't regret it.</p>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+        <a class="diary-photo-link" href="https://www.youtube.com/live/96PInllbg4s?si=4evH6tK-U8mZoqpa" target="_blank" rel="noopener" style="background:var(--coral)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          watch the live attempt
+        </a>
+        <a class="btn-outline-stamp" href="https://youtu.be/c5F3gAGRrwM?si=V0ooaJAKpE1mHbwk" target="_blank" rel="noopener" style="text-decoration:none">watch the summary</a>
+      </div>
     </div>
   </div>
 
   <!-- PAGE 6: DUAL PATH -->
   <div class="page">
-    <div class="page-tab">page six — if you're still here</div>
+    <div class="page-tab">page five — if you're still here</div>
     <div class="paths-grid">
       <div class="path-card brand-path">
         <span class="path-tag">for brands</span>
