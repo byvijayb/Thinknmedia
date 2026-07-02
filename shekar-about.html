@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shekar — Scrapbook</title>
+<title>Shekar — You have to make your own chances</title>
 <meta property="og:type" content="website">
-<meta property="og:title" content="Shekar — About">
-<meta property="og:description" content="10th fail. 12th fail. 3 Instagram pages. 200K+ followers. The actual scrapbook.">
+<meta property="og:title" content="Shekar — You have to make your own chances">
+<meta property="og:description" content="Failed school 3 times. No degree. One phone. Built 3 Instagram pages, a clothing brand, ₹17L+ in 9 months — the actual story.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Manrope:wght@300;400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -66,10 +66,10 @@ nav { position: relative; z-index: 50; padding: 1.5rem 1.75rem 0.5rem; display: 
 }
 .cover-board {
   position: relative; background: var(--paper);
-  border: 1px solid rgba(0,0,0,0.06);
-  border-radius: 6px;
-  box-shadow: 0 20px 60px rgba(35,32,23,0.18), 0 2px 8px rgba(35,32,23,0.08);
-  padding: 3rem 2.5rem 2.5rem;
+  border: 1.5px solid rgba(33,32,29,0.12);
+  border-radius: 10px;
+  box-shadow: 0 24px 80px rgba(35,32,23,0.22), 0 4px 12px rgba(35,32,23,0.1);
+  padding: 3rem 2.75rem 2.75rem;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 2rem;
@@ -97,8 +97,8 @@ nav { position: relative; z-index: 50; padding: 1.5rem 1.75rem 0.5rem; display: 
 }
 .fail-stamp.coral-s { background: var(--coral); color: #fff; transform: rotate(4deg); }
 .cover-h1 {
-  font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(2.1rem, 4.8vw, 3.4rem);
-  line-height: 1.08; letter-spacing: -1.3px; margin-bottom: 1rem; max-width: 480px;
+  font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(2.3rem, 5vw, 3.7rem);
+  line-height: 1.05; letter-spacing: -2px; margin-bottom: 1rem; max-width: 500px;
 }
 .cover-h1 .ital { font-style: italic; font-weight: 500; color: var(--coral); }
 .cover-sub { font-size: 0.98rem; color: var(--muted); max-width: 400px; margin-bottom: 1.5rem; line-height: 1.7; }
@@ -150,9 +150,9 @@ nav { position: relative; z-index: 50; padding: 1.5rem 1.75rem 0.5rem; display: 
    ════════════════════════════════════════ */
 .spread { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 4rem; }
 .page {
-  position: relative; background: var(--paper); border: 1px solid rgba(0,0,0,0.06);
-  border-radius: 6px; box-shadow: 0 14px 40px rgba(35,32,23,0.12);
-  padding: 2.5rem 2.25rem; margin-bottom: 2rem;
+  position: relative; background: var(--paper); border: 1.5px solid rgba(33,32,29,0.1);
+  border-radius: 8px; box-shadow: 0 6px 24px rgba(35,32,23,0.09), 0 20px 60px rgba(35,32,23,0.07);
+  padding: 2.75rem 2.5rem; margin-bottom: 2.25rem;
 }
 .page-tab {
   position: absolute; top: -14px; left: 2rem; background: var(--ink); color: var(--bg);
@@ -174,43 +174,19 @@ nav { position: relative; z-index: 50; padding: 1.5rem 1.75rem 0.5rem; display: 
 .washi-divider { height: 22px; background: repeating-linear-gradient(135deg, var(--teal-light) 0 10px, var(--pink-light) 10px 20px); margin: 1.5rem -2.25rem; opacity: 0.6; }
 
 /* sticky notes timeline - compact corkboard style */
-/* ── first video card — torn YouTube polaroid style ── */
-.first-video-card {
-  display: block; text-decoration: none; margin-top: 1.25rem;
-  background: #fff; border: 2px solid var(--ink);
-  border-radius: 8px; overflow: hidden;
-  box-shadow: 4px 4px 0 var(--ink);
-  transform: rotate(-1.5deg);
-  transition: transform 0.2s, box-shadow 0.15s;
-  position: relative;
+/* ── first video inline pill ── */
+.first-video-inline {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  margin-top: 1rem; text-decoration: none;
+  background: var(--ink); color: #fff;
+  padding: 0.55rem 1rem; border-radius: 100px;
+  font-size: 0.82rem; font-weight: 700;
+  transition: background 0.2s, transform 0.15s;
+  border: 2px solid var(--ink);
 }
-.first-video-card:hover { transform: rotate(0deg) translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink); }
-.fvc-thumb {
-  width: 100%; height: 90px;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  display: flex; align-items: center; justify-content: center; position: relative;
-}
-.fvc-play {
-  width: 36px; height: 36px; background: var(--coral); border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1rem; color: #fff; padding-left: 3px;
-}
-.fvc-year-badge {
-  position: absolute; top: 6px; left: 8px;
-  font-size: 0.6rem; font-weight: 800; color: rgba(255,255,255,0.35);
-  letter-spacing: 1.5px; text-transform: uppercase;
-  background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 3px;
-}
-.fvc-warn {
-  position: absolute; top: 6px; right: 8px;
-  background: var(--coral); color: #fff; font-size: 0.55rem;
-  font-weight: 900; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.5px;
-  text-transform: uppercase; transform: rotate(2deg);
-}
-.fvc-body { padding: 0.7rem 0.85rem 0.85rem; background: #fff; }
-.fvc-label { font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--coral-dark); margin-bottom: 0.2rem; }
-.fvc-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1rem; color: var(--ink); margin-bottom: 0.3rem; line-height: 1.3; }
-.fvc-quote { font-size: 0.95rem; color: var(--muted); }
+.first-video-inline:hover { background: var(--coral); transform: rotate(-1deg); }
+.fvi-icon { font-size: 0.75rem; opacity: 0.9; }
+.fvi-note { font-size: 1rem; color: rgba(255,255,255,0.55); margin-left: 0.2rem; }
 
 /* ── brand grid ── */
 .brand-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
@@ -268,9 +244,10 @@ nav { position: relative; z-index: 50; padding: 1.5rem 1.75rem 0.5rem; display: 
 .tickets-row { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
 .ticket {
   display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center;
-  background: var(--paper); border: 2px solid var(--ink); border-radius: 8px; padding: 1.25rem 1.5rem;
-  position: relative; overflow: hidden;
+  background: var(--paper); border: 2px solid var(--ink); border-radius: 10px; padding: 1.4rem 1.75rem;
+  position: relative; overflow: hidden; transition: box-shadow 0.2s, transform 0.15s;
 }
+.ticket:hover { box-shadow: 4px 4px 0 var(--ink); transform: translate(-2px,-2px); }
 .ticket::before, .ticket::after {
   content: ''; position: absolute; width: 18px; height: 18px; background: var(--bg);
   border-radius: 50%; top: 50%; transform: translateY(-50%);
@@ -297,6 +274,15 @@ nav { position: relative; z-index: 50; padding: 1.5rem 1.75rem 0.5rem; display: 
 /* ── PAGE 3: RECEIPT + BRANDS combined ── */
 .combo-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 2rem; }
 /* ── REVENUE TREE — stacked bar visual ── */
+/* ── page 4 inner grid ── */
+.page4-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 0;
+}
+
 /* ── single segmented revenue bar ── */
 .single-bar-track {
   display: flex; height: 28px; border: 2px solid var(--ink); border-radius: 100px;
@@ -347,7 +333,9 @@ nav { position: relative; z-index: 50; padding: 1.5rem 1.75rem 0.5rem; display: 
 .goggins-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.3px; }
 .goggins-text { font-size: 0.92rem; color: rgba(251,244,233,0.7); line-height: 1.8; margin-bottom: 1rem; position: relative; }
 
-.postcard { background: var(--bg); border: 1.5px solid #d8cfb8; border-radius: 6px; padding: 1.1rem; position: relative; }
+.postcard { background: var(--bg); border: 1.5px solid var(--paper-border); border-radius: 8px; padding: 1.1rem 1.25rem; position: relative; }
+.postcard h5 { font-family: 'Caveat', cursive; font-size: 1.15rem; color: var(--coral-dark); margin-bottom: 0.35rem; }
+.postcard p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
 .postcard::before { content: '✉'; position: absolute; top: 0.6rem; right: 0.7rem; opacity: 0.2; font-size: 1rem; }
 .postcard h5 { font-family: 'Caveat', cursive; font-size: 1.2rem; color: var(--coral-dark); margin-bottom: 0.4rem; }
 .postcard p { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
@@ -385,6 +373,8 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
   .polaroid { display: none; }
   .sticky.left-sticky { display: none; }
   .diary-grid { grid-template-columns: 1fr; }
+  .page4-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .pg-scroll-wrap { margin: 0 -1.25rem; padding: 0 1.25rem 0.25rem; }
   .page [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
   .combo-grid { grid-template-columns: 1fr; }
   .ticket { grid-template-columns: 1fr; }
@@ -407,6 +397,7 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
   <a href="shekar-coaching.html" class="nav-logo">Shekar.</a>
   <div class="nav-right">
     <a href="shekar-coaching.html" class="nav-link">Work with me</a>
+    <a href="https://www.instagram.com/thinknmedia_/" target="_blank" class="nav-link">@thinknmedia_</a>
     <a class="nav-cta" href="https://forms.gle/LrEXDdyyxGzvheFz7" target="_blank" rel="noopener">Let's talk →</a>
   </div>
 </nav>
@@ -421,9 +412,9 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
       <div class="fail-stamp">10th — FAILED</div>
       <div class="fail-stamp" style="background:var(--teal-light);color:var(--teal);transform:rotate(3deg)">INTER — FAILED</div>
       <div class="fail-stamp coral-s">DEGREE — NEVER STARTED</div>
-      <h1 class="cover-h1">Nobody gave me a chance.<br><span class="ital">So I stopped waiting for one.</span></h1>
-      <p class="cover-sub">I'm Shekar. Failed school three times. No degree, no money, one cheap phone. Somehow ended up with three Instagram pages, a clothing brand, and ₹17 lakhs earned — in 9 months — from figuring things out the hard way.</p>
-      <p class="script" style="font-size:1.2rem;color:var(--coral-dark);margin:-0.75rem 0 1.25rem">if I can do this from where I started, you probably have more going for you than you think.</p>
+      <h1 class="cover-h1">You have to make<br>your own <span class="ital">chances.</span></h1>
+      <p class="cover-sub">I'm Shekar. Failed school three times. No degree. One cheap phone. Made it work anyway — three Instagram pages, a clothing brand, ₹17 lakhs in 9 months. All figured out without a roadmap.</p>
+      <p class="script" style="font-size:1.2rem;color:var(--coral-dark);margin:-0.75rem 0 1.25rem">if I could figure this out, I promise the bar isn't as high as they made you think.</p>
       <div class="cover-btns">
         <a href="#story" class="btn-stamp">Read the story ↓</a>
       </div>
@@ -458,7 +449,7 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
 
   <!-- PAGE 1: STORY -->
   <div class="page" id="story">
-    <div class="page-tab">page one — the messy bit</div>
+    <div class="page-tab">pg 01 — the honest part</div>
     <div class="diary-grid">
       <div class="diary-text">
         <p>I failed 10th. Then I failed Inter.</p>
@@ -473,17 +464,9 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
 
         <p>My brother said it like there was nothing to think about: <em>"just try YouTube. What else are you doing?"</em></p>
 
-        <a class="first-video-card" href="https://youtu.be/YqQnGAwPm6A?si=PraFW2TEggig-NQE" target="_blank" rel="noopener">
-          <div class="fvc-thumb">
-            <div class="fvc-play">▶</div>
-            <div class="fvc-year-badge">2019</div>
-            <div class="fvc-warn">⚠ viewer discretion</div>
-          </div>
-          <div class="fvc-body">
-            <div class="fvc-label">the origin story nobody asked for</div>
-            <div class="fvc-title">Bad quality. Zero views. Still posted it. That's literally the whole lesson.</div>
-            <div class="fvc-quote script">"everyone starts somewhere. mine just had worse lighting."</div>
-          </div>
+        <a class="first-video-inline" href="https://youtu.be/YqQnGAwPm6A?si=PraFW2TEggig-NQE" target="_blank" rel="noopener">
+          <span class="fvi-icon">▶</span>
+          <span class="fvi-text">watch that first video — <span class="fvi-note script">bad lighting, zero plan, posted anyway</span></span>
         </a>
 
         <p>So I just kept going. Uploaded whatever made sense that day. 0 views. 3 views. 7 views on a good week. Paid one guy to coach me — he just said things I already knew but louder. Tried every "grow fast" shortcut I could find on YouTube. Bought fake subscribers once. Watched a number go up that meant nothing.</p>
@@ -515,7 +498,7 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
 
   <!-- PAGE 2: CHANNELS AS TICKETS -->
   <div class="page" id="channels">
-    <div class="page-tab">page two — the proof</div>
+    <div class="page-tab">pg 02 — the numbers</div>
     <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;margin-bottom:0.25rem">Three pages. Three different fights.</h3>
     <p style="font-size:0.86rem;color:var(--muted)">Tap any handle — every number here is real and public.</p>
 
@@ -569,7 +552,7 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
 
   <!-- PAGE 3: REVENUE TREE + BRANDS + SIGNATURE -->
   <div class="page" id="brands">
-    <div class="page-tab">page three — where the money came from</div>
+    <div class="page-tab">pg 03 — where it went</div>
     <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;margin-bottom:0.3rem">₹17L+, last 9 months. Here's the actual split.</h3>
     <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.5rem">No magic single source. One bar, three streams.</p>
 
@@ -619,9 +602,9 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
 
   <!-- PAGE 4: PLAYGROUND + OFF DUTY + GOGGINS -->
   <div class="page">
-    <div class="page-tab">page four — honestly</div>
+    <div class="page-tab">pg 04 — everything else</div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;margin-bottom:0">
+    <div class="page4-grid">
       <div>
         <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;margin-bottom:0.25rem">Here's how I'd think about your situation.</h3>
         <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem">Not advice. Just what I'd actually do.</p>
@@ -669,7 +652,7 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
 
   <!-- PAGE 6: DUAL PATH -->
   <div class="page">
-    <div class="page-tab">page five — if you're still here</div>
+    <div class="page-tab">pg 05 — let's talk</div>
     <div class="paths-grid">
       <div class="path-card brand-path">
         <span class="path-tag">for brands</span>
@@ -689,7 +672,7 @@ footer { padding: 2.5rem 1.75rem; text-align: center; color: var(--muted); font-
   <!-- FINAL -->
   <div class="final-page">
     <h2>Read this far?<br><span class="ital">Let's talk.</span></h2>
-    <p>Brand, creator, or just curious — I read every message myself.</p>
+    <p>Brand deal, coaching, or just want to say something — I read every message myself. No assistant.</p>
     <a class="btn-cream" href="https://forms.gle/LrEXDdyyxGzvheFz7" target="_blank" rel="noopener">Get in touch →</a>
   </div>
 </div>
@@ -720,9 +703,9 @@ tryLoad(document.getElementById('polaroid2'), thumbSrcs('DW-xDJ7E4pY'), 0);
 tryLoad(document.getElementById('polaroid3'), thumbSrcs('DYKMr4FTKJc'), 0);
 
 var pgData = {
-  zero: 'Find <span class="pg-num">one thing</span> that\'s actually yours. Mine was IKEA bags into trousers. Post it badly if you have to.',
-  stuck: 'I went <span class="pg-num">4 months</span> stuck before I stopped copying trends and started making things nobody else was.',
-  viral: 'One hit is luck. The second is a pattern. Ask <span class="pg-num">what specifically</span> worked — then do that on purpose.',
+  zero: 'Don\'t think about growing yet. Just post something that\'s actually <span class="pg-num">yours</span>. Mine was IKEA bags into trousers. It was weird. That was the point.',
+  stuck: 'Most likely you\'re posting things that <span class="pg-num">someone else</span> already said better. I did that for 4 months. The fix wasn\'t trying harder — it was stopping the copying.',
+  viral: 'That one hit worked for a reason. <span class="pg-num">Find it</span>. Not the topic — the structure, the hook, the feeling it created. That thing is repeatable. Everything else was noise.',
   brand: 'I started with exactly <span class="pg-num">₹20,000</span>. The trick wasn\'t the money — it was documenting everything, publicly, from day one.'
 };
 var pgOutput = document.getElementById('pgOutput');
