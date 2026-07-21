@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shekar</title>
+<meta property="og:title" content="Shekar — Creator, Coach, Builder">
+<meta property="og:description" content="Fashion. Fitness. Instagram Growth. ₹17L in 9 months.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Rule 1: Neutral base */
+  --bg:       #FDFCF8;
+  --card:     #FFFFFF;
+  --border:   #EBEBEB;
+  --shadow:   0 1px 4px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.04);
+
+  /* Typography */
+  --text:     #1A1A1A;
+  --sub:      #555;
+  --muted:    #999;
+
+  /* Rule 2: ONE accent — used only for buttons & key links */
+  --accent:      #5CBDB9;
+  --accent-dark: #3fa09c;
+  --accent-light: #EBF6F5;
+
+  /* Brand accents — left border ONLY */
+  --mg:    #004953;   /* Cage Croc midnight green */
+  --gold:  #C4962A;   /* Sirulu gold */
+
+  /* Subtle tints — very light, backgrounds only */
+  --tint-green:  #F2F9F9;
+  --tint-coral:  #FDF6F4;
+  --tint-gold:   #FDFAF3;
+  --tint-blue:   #F4FBFB;
+  --tint-yellow: #FDFBF3;
+
+  /* Revenue bar colors */
+  --coral:   #E8633A;
+  --mustard: #E8B339;
+
+  --radius: 14px;
+  --gap:    3rem;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ─ LAYOUT ─ */
+.wrap { max-width: 440px; margin: 0 auto; padding: 3rem 1.25rem 6rem; }
+.section { margin-bottom: var(--gap); }
+
+/* ─ SECTION LABEL ─ */
+.slabel {
+  font-size: .6rem; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 1.2px; color: var(--muted);
+  display: flex; align-items: center; gap: .6rem;
+  margin-bottom: 1rem;
+}
+.slabel::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ════════════════════════════════════════
+   PROFILE
+════════════════════════════════════════ */
+.profile { text-align: center; margin-bottom: var(--gap); }
+
+.av-ring { position: relative; display: inline-block; margin-bottom: 1.1rem; }
+.av {
+  width: 96px; height: 96px; border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,.15);
+  display: flex; align-items: center; justify-content: center;
+  background: #e0d8cc;
+}
+.av img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.live {
+  position: absolute; bottom: 5px; right: 5px;
+  width: 13px; height: 13px; border-radius: 50%;
+  background: #22c55e; border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,.2);
+}
+
+.p-name  { font-size: 1.45rem; font-weight: 800; letter-spacing: -.5px; margin-bottom: .35rem; }
+.p-tag   { font-size: .88rem; color: var(--sub); line-height: 1.6; max-width: 280px; margin: 0 auto .9rem; }
+.p-quote { font-family: 'Caveat', cursive; font-size: 1.15rem; color: var(--accent-dark); margin-bottom: 1.1rem; display: block; }
+
+.story-btn {
+  display: inline-flex; align-items: center; gap: .4rem;
+  border: 1.5px solid var(--border); border-radius: 100px;
+  padding: .42rem 1.1rem; font-size: .75rem; font-weight: 700;
+  color: var(--text); text-decoration: none; background: var(--card);
+  box-shadow: var(--shadow); transition: border-color .18s, color .18s;
+  margin-bottom: 1.5rem;
+}
+.story-btn:hover { border-color: var(--accent); color: var(--accent-dark); }
+
+.handles { display: flex; justify-content: center; flex-wrap: wrap; gap: .45rem; }
+.handle {
+  display: inline-flex; align-items: center; gap: .3rem;
+  border: 1.5px solid var(--border); border-radius: 100px;
+  padding: .28rem .8rem; font-size: .68rem; font-weight: 700;
+  color: var(--sub); text-decoration: none; background: var(--card);
+  transition: border-color .18s, color .18s;
+}
+.handle:hover { border-color: var(--accent); color: var(--accent-dark); }
+.hdot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+
+/* ════════════════════════════════════════
+   IG PAGES — white cards, accent left border
+════════════════════════════════════════ */
+.ig-stack { display: flex; flex-direction: column; gap: .65rem; }
+
+.ig-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.25rem 1.35rem;
+  text-decoration: none; color: var(--text);
+  box-shadow: var(--shadow); transition: box-shadow .18s, transform .18s;
+  display: block; border-left: 3.5px solid transparent;
+}
+.ig-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,.09); }
+
+/* Per-page accent — left border only */
+.ig-wear  { border-left-color: var(--coral); }
+.ig-era   { border-left-color: var(--accent); }
+.ig-soma  { border-left-color: var(--mustard); }
+.ig-media { border-left-color: var(--accent-dark); }
+
+.ig-row-top { display: flex; align-items: flex-start; justify-content: space-between; gap: .5rem; margin-bottom: .6rem; }
+.ig-niche { font-size: .62rem; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin-bottom: .2rem; }
+.ig-handle { font-size: .92rem; font-weight: 800; }
+.ig-view {
+  font-size: .65rem; font-weight: 700; color: var(--accent-dark);
+  background: var(--accent-light); padding: .18rem .6rem;
+  border-radius: 100px; white-space: nowrap; text-decoration: none;
+  flex-shrink: 0;
+}
+.ig-num { font-size: 1.75rem; font-weight: 800; letter-spacing: -1px; line-height: 1; }
+.ig-unit { font-size: .58rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin-top: .12rem; }
+.ig-sub  { font-size: .72rem; color: var(--sub); margin-top: .45rem; line-height: 1.5; }
+
+/* thinknwear — featured, slightly larger number */
+.ig-wear .ig-num { color: var(--coral); font-size: 2rem; }
+
+/* two-col for era + soma */
+.ig-two { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; }
+
+/* thinknmedia — coaching, subtle teal tint */
+.ig-media { background: var(--tint-blue); border-left-color: var(--accent-dark); }
+.ig-media-inner { display: flex; align-items: center; gap: .85rem; }
+.ig-media-icon { font-size: 1.5rem; flex-shrink: 0; }
+.ig-media-body { flex: 1; }
+.ig-media .ig-handle { font-size: .88rem; color: var(--accent-dark); }
+.ig-media .ig-sub { color: var(--sub); margin-top: .2rem; font-size: .73rem; }
+.ig-media-arr { font-size: .85rem; color: var(--muted); flex-shrink: 0; }
+
+/* ════════════════════════════════════════
+   BRANDS — side by side, left border accent
+════════════════════════════════════════ */
+.brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; }
+
+.brand-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.35rem;
+  box-shadow: var(--shadow); transition: box-shadow .18s, transform .18s;
+  display: flex; flex-direction: column; gap: .5rem;
+  border-left: 3.5px solid transparent;
+}
+.brand-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,.09); }
+.bc-cage { border-left-color: var(--mg); }
+.bc-sir  { border-left-color: var(--gold); }
+
+.brand-name { font-size: .95rem; font-weight: 800; letter-spacing: -.2px; }
+.brand-type { font-size: .62rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); }
+
+.brand-stats { display: flex; gap: 1.25rem; margin: .75rem 0; }
+.bstat { display: flex; flex-direction: column; gap: .12rem; }
+.bstat-num { font-size: 1.25rem; font-weight: 800; letter-spacing: -.5px; line-height: 1; }
+.bstat-lbl { font-size: .58rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); }
+.bc-cage .bstat-num { color: var(--mg); }
+.bc-sir  .bstat-num { color: var(--gold); }
+
+.brand-desc { font-size: .72rem; color: var(--sub); line-height: 1.55; }
+
+.brand-link {
+  display: inline-flex; align-items: center; gap: .3rem;
+  font-size: .68rem; font-weight: 700; text-decoration: none;
+  margin-top: auto; padding-top: .5rem;
+}
+.bc-cage .brand-link { color: var(--mg); }
+.bc-sir  .brand-link { color: var(--gold); }
+
+.brand-btns { display: flex; gap: .5rem; margin-top: auto; padding-top: .65rem; flex-wrap: wrap; }
+.brand-shop-btn {
+  display: inline-flex; align-items: center; gap: .25rem;
+  background: var(--mg); color: #fff;
+  font-size: .7rem; font-weight: 800; padding: .42rem .85rem;
+  border-radius: 100px; text-decoration: none; transition: opacity .18s;
+  white-space: nowrap;
+}
+.brand-shop-btn:hover { opacity: .85; }
+.brand-ig-btn {
+  display: inline-flex; align-items: center;
+  border: 1.5px solid var(--border); color: var(--sub);
+  font-size: .68rem; font-weight: 700; padding: .38rem .75rem;
+  border-radius: 100px; text-decoration: none; transition: border-color .18s;
+  white-space: nowrap;
+}
+.brand-ig-btn:hover { border-color: var(--mg); color: var(--mg); }
+
+.coming-pill {
+  display: inline-flex; align-items: center; gap: .3rem;
+  font-size: .6rem; font-weight: 800; color: var(--gold);
+  background: var(--tint-gold); border: 1px solid rgba(196,150,42,.2);
+  padding: .18rem .6rem; border-radius: 100px;
+}
+
+/* ════════════════════════════════════════
+   REVENUE BAR
+════════════════════════════════════════ */
+.rev {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.35rem;
+  box-shadow: var(--shadow); position: relative; overflow: hidden;
+}
+.rev::after {
+  content: '₹17L+'; font-family: 'Caveat', cursive;
+  font-size: 4rem; font-weight: 700; color: rgba(92,189,185,.06);
+  position: absolute; right: .5rem; top: -.2rem;
+  pointer-events: none; line-height: 1;
+}
+.rev-head { font-size: .82rem; font-weight: 800; margin-bottom: .1rem; }
+.rev-sub  { font-size: .7rem; color: var(--muted); margin-bottom: .85rem; }
+.rev-bar  {
+  height: 20px; border: 1.5px solid var(--text);
+  border-radius: 100px; overflow: hidden; display: flex;
+  margin-bottom: .75rem;
+}
+.rb { height: 100%; }
+.rb:not(:last-child) { border-right: 1.5px solid var(--text); }
+.rev-legs { display: flex; flex-wrap: wrap; gap: .35rem .85rem; }
+.rl { display: flex; align-items: center; gap: .32rem; font-size: .68rem; color: var(--text); }
+.rld { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+.rl strong { color: var(--accent-dark); font-weight: 800; }
+
+/* ════════════════════════════════════════
+   WORK WITH ME
+════════════════════════════════════════ */
+.work-stack { display: flex; flex-direction: column; gap: .65rem; }
+
+/* Rule 5: accent tint background for coaching cards */
+.wcard {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.35rem;
+  box-shadow: var(--shadow); text-decoration: none; color: var(--text);
+  display: flex; align-items: center; gap: 1rem;
+  transition: box-shadow .18s, transform .18s;
+  border-left: 3.5px solid var(--accent);
+}
+.wcard:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,.09); }
+.wcard.primary { background: var(--tint-blue); border-left-color: var(--accent-dark); }
+.wcard-icon {
+  width: 44px; height: 44px; border-radius: 11px;
+  background: var(--accent-light); display: flex;
+  align-items: center; justify-content: center;
+  font-size: 1.25rem; flex-shrink: 0;
+}
+.wcard.primary .wcard-icon { background: rgba(92,189,185,.18); }
+.wcard-body { flex: 1; min-width: 0; }
+.wcard-eye   { font-size: .6rem; font-weight: 800; text-transform: uppercase; letter-spacing: .7px; color: var(--muted); margin-bottom: .18rem; }
+.wcard-title { font-size: .9rem; font-weight: 800; line-height: 1.3; margin-bottom: .18rem; }
+.wcard-sub   { font-size: .7rem; color: var(--sub); line-height: 1.4; }
+.wcard-right { display: flex; flex-direction: column; align-items: flex-end; gap: .2rem; flex-shrink: 0; }
+.wcard-price { font-size: .95rem; font-weight: 800; color: var(--accent-dark); }
+.wcard-arr   { font-size: .85rem; color: var(--muted); }
+.wcard-note  { font-size: .6rem; color: var(--muted); text-align: right; }
+
+/* ════════════════════════════════════════
+   PRODUCT CATEGORY
+════════════════════════════════════════ */
+.cat {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.cat-head {
+  padding: 1.25rem 1.35rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+}
+.cat-head-row { display: flex; align-items: center; gap: .6rem; margin-bottom: .4rem; }
+.cat-emoji { font-size: 1.1rem; }
+.cat-title { font-size: .9rem; font-weight: 800; }
+.cat-chip {
+  display: inline-flex; align-items: center; gap: .28rem;
+  background: var(--tint-green); border: 1px solid rgba(92,189,185,.2);
+  color: var(--accent-dark); font-size: .65rem; font-weight: 700;
+  padding: .18rem .6rem; border-radius: 100px; margin-bottom: .4rem;
+}
+.cat-desc  { font-size: .73rem; color: var(--sub); line-height: 1.55; }
+.cat-hw    { font-family: 'Caveat', cursive; font-size: 1rem; color: var(--accent-dark); display: block; margin-top: .35rem; transform: rotate(-1deg); }
+
+/* product row */
+.prod {
+  display: flex; align-items: center; gap: .9rem;
+  padding: 1rem 1.35rem; text-decoration: none; color: var(--text);
+  border-bottom: 1px solid var(--border); transition: background .15s;
+}
+.prod:last-child { border-bottom: none; }
+.prod:hover { background: var(--bg); }
+.prod.star  { background: var(--tint-gold); }
+.prod.star:hover { background: #fdf8ed; }
+
+.prod-icon {
+  width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+  background: var(--bg); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+}
+.prod-info { flex: 1; min-width: 0; }
+.prod-name { font-size: .83rem; font-weight: 800; line-height: 1.3; margin-bottom: .1rem; }
+.prod-what { font-size: .7rem; color: var(--sub); line-height: 1.35; }
+.prod-right { display: flex; flex-direction: column; align-items: flex-end; gap: .15rem; flex-shrink: 0; }
+.prod-price { font-size: .88rem; font-weight: 800; color: var(--text); }
+.prod-was   { font-size: .62rem; color: var(--muted); text-decoration: line-through; }
+
+.badge { font-size: .58rem; font-weight: 800; padding: .15rem .52rem; border-radius: 100px; }
+.b-green  { background: #e8f8e8; color: #166534; }
+.b-teal   { background: var(--accent-light); color: var(--accent-dark); }
+.b-orange { background: #fff0e8; color: #9a3412; }
+.b-star   { background: #fef9c3; color: #854d0e; }
+
+/* ════════════════════════════════════════
+   EXPLORE LINKS
+════════════════════════════════════════ */
+.explore { display: flex; flex-direction: column; gap: .55rem; }
+.exp {
+  display: flex; align-items: center; gap: .85rem;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1rem 1.1rem;
+  text-decoration: none; color: var(--text);
+  box-shadow: var(--shadow); transition: all .18s;
+}
+.exp:hover { border-color: var(--accent); transform: translateX(2px); }
+.exp-icon {
+  width: 36px; height: 36px; border-radius: 9px;
+  background: var(--bg); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .95rem; flex-shrink: 0;
+}
+.exp-body  { flex: 1; }
+.exp-title { font-size: .82rem; font-weight: 800; margin-bottom: .1rem; }
+.exp-sub   { font-size: .68rem; color: var(--sub); line-height: 1.35; }
+.exp-arr   { font-size: .85rem; color: var(--muted); flex-shrink: 0; }
+
+/* ─ FOOTER ─ */
+.foot { text-align: center; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.foot p { font-size: .68rem; color: var(--muted); line-height: 1.8; }
+.foot a { color: var(--accent-dark); font-weight: 700; text-decoration: none; }
+
+/* ─ RESPONSIVE ─ */
+@media (max-width: 380px) {
+  .ig-two    { grid-template-columns: 1fr; }
+  .brand-grid { grid-template-columns: 1fr; }
+  .wrap { padding: 2.5rem 1rem 5rem; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ── PROFILE ── -->
+  <div class="profile">
+    <div class="av-ring">
+      <div class="av" id="avatar"><img src="data:image/jpeg;base64,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" alt="Shekar"></div>
+      <div class="live"></div>
+    </div>
+    <div class="p-name">Shekar</div>
+    <p class="p-tag">Fashion, fitness, Instagram growth — and two clothing brands. I figure things out the hard way, then share exactly what worked.</p>
+    <span class="p-quote">You have to make your own chances.</span>
+    <a href="about.html" class="story-btn">📖 My story →</a>
+    <div class="handles">
+      <a href="https://www.instagram.com/thinknwear_/"   target="_blank" rel="noopener" class="handle"><span class="hdot" style="background:#E1306C"></span>@thinknwear_</a>
+      <a href="https://www.instagram.com/era_of_shekar/" target="_blank" rel="noopener" class="handle"><span class="hdot" style="background:#5CBDB9"></span>@era_of_shekar</a>
+      <a href="https://www.instagram.com/somashekarx/"   target="_blank" rel="noopener" class="handle"><span class="hdot" style="background:#E8B339"></span>@somashekarx</a>
+      <a href="https://www.instagram.com/thinknmedia_/"  target="_blank" rel="noopener" class="handle"><span class="hdot" style="background:#3fa09c"></span>@thinknmedia_</a>
+    </div>
+  </div>
+
+  <!-- ── IG PAGES ── -->
+  <div class="section">
+    <div class="slabel">Instagram pages</div>
+    <div class="ig-stack">
+
+      <!-- thinknwear_ — coral left border -->
+      <a href="https://www.instagram.com/thinknwear_/" target="_blank" rel="noopener" class="ig-card ig-wear">
+        <div class="ig-row-top">
+          <div>
+            <div class="ig-niche">Fashion · Budget creativity</div>
+            <div class="ig-handle">@thinknwear_</div>
+          </div>
+          <span class="ig-view">View ↗</span>
+        </div>
+        <div class="ig-num">150k</div>
+        <div class="ig-unit">Followers</div>
+        <div class="ig-sub">23.5M views/month · IKEA bags into trousers · Sarees into shirts</div>
+      </a>
+
+      <!-- era + somashekarx side by side -->
+      <div class="ig-two">
+        <a href="https://www.instagram.com/era_of_shekar/" target="_blank" rel="noopener" class="ig-card ig-era">
+          <div class="ig-niche">Fitness</div>
+          <div class="ig-handle">@era_of_shekar</div>
+          <div class="ig-num">26k</div>
+          <div class="ig-unit">Followers</div>
+          <div class="ig-sub">Where it all started</div>
+        </a>
+        <a href="https://www.instagram.com/somashekarx/" target="_blank" rel="noopener" class="ig-card ig-soma">
+          <div class="ig-niche">Documentary</div>
+          <div class="ig-handle">@somashekarx</div>
+          <div class="ig-num">16k</div>
+          <div class="ig-unit">Followers</div>
+          <div class="ig-sub">Brand journey, revenue, all moves — publicly</div>
+        </a>
+      </div>
+
+      <!-- thinknmedia_ -->
+      <a href="https://www.instagram.com/thinknmedia_/" target="_blank" rel="noopener" class="ig-card ig-media">
+        <div class="ig-media-inner">
+          <div class="ig-media-icon">🎓</div>
+          <div class="ig-media-body">
+            <div class="ig-handle" style="color:var(--accent-dark)">@thinknmedia_</div>
+            <div class="ig-sub" style="margin-top:.2rem">I help creators grow on Instagram — content strategy, hooks, scripting. The real way.</div>
+          </div>
+          <span class="ig-media-arr">↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ── BRANDS ── -->
+  <div class="section">
+    <div class="slabel">My brands</div>
+    <div class="brand-grid">
+
+      <!-- Cage Croc — midnight green left border -->
+      <div class="brand-card bc-cage">
+        <div class="brand-name">Cage Croc</div>
+        <div class="brand-type">Men's Clothing</div>
+        <div class="brand-stats">
+          <div class="bstat">
+            <span class="bstat-num">₹2L</span>
+            <span class="bstat-lbl">Earned</span>
+          </div>
+          <div class="bstat">
+            <span class="bstat-num">₹20k</span>
+            <span class="bstat-lbl">Invested</span>
+          </div>
+        </div>
+        <div class="brand-desc">Started with ₹20k. Documented every drop publicly on @somashekarx.</div>
+        <div class="brand-btns">
+          <a href="https://cagecroc.com/" target="_blank" rel="noopener" class="brand-shop-btn">Shop now ↗</a>
+          <a href="https://www.instagram.com/cagecroc.in/" target="_blank" rel="noopener" class="brand-ig-btn">@cagecroc.in</a>
+        </div>
+      </div>
+
+      <!-- Sirulu — gold left border -->
+      <div class="brand-card bc-sir">
+        <div class="coming-pill">✦ Coming soon</div>
+        <div class="brand-name">Sirulu</div>
+        <div class="brand-type">Women's Ethnic Wear</div>
+        <div class="brand-desc" style="margin-top:.35rem">"Sirulu" means gold treasure in Telugu. A women's ethnic clothing brand — being built from scratch, in public.</div>
+        <a href="https://www.instagram.com/sirulu.in/" target="_blank" rel="noopener" class="brand-link">@sirulu.in ↗</a>
+        <div style="margin-top:.35rem;padding-top:.5rem;border-top:1px solid #F0E8D0;font-size:.65rem;color:var(--muted)">Follow <strong style="color:var(--sub)">@somashekarx</strong> for launch updates</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── REVENUE BAR ── -->
+  <div class="section">
+    <div class="slabel">Revenue</div>
+    <div class="rev">
+      <div class="rev-head">₹17L+ in 9 months — the actual split</div>
+      <div class="rev-sub">Three streams. Not one lucky break.</div>
+      <div class="rev-bar">
+        <div class="rb" style="width:29%;background:#E8633A"></div>
+        <div class="rb" style="width:2%;background:#5CBDB9"></div>
+        <div class="rb" style="width:69%;background:#E8B339"></div>
+      </div>
+      <div class="rev-legs">
+        <div class="rl"><span class="rld" style="background:#E8633A"></span>Fitness coaching&nbsp;<strong>~₹5L</strong></div>
+        <div class="rl"><span class="rld" style="background:#5CBDB9"></span>YouTube ads&nbsp;<strong>~₹25k</strong></div>
+        <div class="rl"><span class="rld" style="background:#E8B339"></span>Brand collabs&nbsp;<strong>~₹11.7L+</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WORK WITH ME ── -->
+  <div class="section">
+    <div class="slabel">🔥 Work with me</div>
+    <div class="work-stack">
+
+      <a href="https://topmate.io/eraofshekar/1764414?utm_source=public_profile&utm_campaign=eraofshekar" target="_blank" rel="noopener" class="wcard primary">
+        <div class="wcard-icon">📞</div>
+        <div class="wcard-body">
+          <div class="wcard-eye">1:1 Video call · 60 mins</div>
+          <div class="wcard-title">Grow your content — virality is not luck</div>
+          <div class="wcard-sub">We look at your page together. Analyse, review, improve. Exact next steps.</div>
+        </div>
+        <div class="wcard-right">
+          <span class="wcard-price">₹2,999</span>
+          <span class="wcard-arr">→</span>
+        </div>
+      </a>
+
+      <a href="coaching.html" class="wcard">
+        <div class="wcard-icon">🚀</div>
+        <div class="wcard-body">
+          <div class="wcard-eye">Monthly coaching · 5 spots only</div>
+          <div class="wcard-title">Instagram Growth — Full System</div>
+          <div class="wcard-sub">Script, strategy, direction. You film — I handle the rest.</div>
+        </div>
+        <div class="wcard-right">
+          <span class="wcard-price">₹35k+</span>
+          <span class="wcard-note">/month</span>
+          <span class="wcard-arr">→</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ── CLOTHING BRAND PRODUCTS ── -->
+  <div class="section">
+    <div class="slabel">🏭 For clothing founders</div>
+    <div class="cat">
+      <div class="cat-head">
+        <div class="cat-head-row">
+          <span class="cat-emoji">🏭</span>
+          <span class="cat-title">Start your clothing brand right</span>
+        </div>
+        <span class="cat-chip">₹20k invested → ₹2L earned · <a href="https://cagecroc.com/" target="_blank" rel="noopener" style="color:var(--accent-dark);text-decoration:none;font-weight:700">Cage Croc ↗</a></span>
+        <div class="cat-desc">Manufacturer contacts, vendor lists, and the guide I built from scratch — everything I needed when I started.</div>
+        <span class="cat-hw">figured this out so you don't have to</span>
+      </div>
+
+      <a href="https://topmate.io/eraofshekar/1828361?utm_source=public_profile&utm_campaign=eraofshekar" target="_blank" rel="noopener" class="prod star">
+        <div class="prod-icon">📋</div>
+        <div class="prod-info">
+          <div class="prod-name">200+ Verified Clothing Manufacturers List</div>
+          <div class="prod-what">Every manufacturer I found — across India, with contact details</div>
+        </div>
+        <div class="prod-right">
+          <span class="prod-price">₹399</span>
+          <span class="prod-was">₹999</span>
+          <span class="badge b-green">Best Seller</span>
+        </div>
+      </a>
+
+      <a href="https://topmate.io/eraofshekar/1828800?utm_source=public_profile&utm_campaign=eraofshekar" target="_blank" rel="noopener" class="prod">
+        <div class="prod-icon">📖</div>
+        <div class="prod-info">
+          <div class="prod-name">Indian Founder's Clothing Manufacturing Guide</div>
+          <div class="prod-what">How to start, where to source, what mistakes to skip</div>
+        </div>
+        <div class="prod-right">
+          <span class="prod-price">₹99</span>
+          <span class="prod-was">₹499</span>
+        </div>
+      </a>
+
+      <a href="https://topmate.io/eraofshekar/1836061?utm_source=public_profile&utm_campaign=eraofshekar" target="_blank" rel="noopener" class="prod">
+        <div class="prod-icon">📍</div>
+        <div class="prod-info">
+          <div class="prod-name">Tiruppur 80 Vendor List</div>
+          <div class="prod-what">50 T-shirt + 30 shirt vendors, verified with contacts</div>
+        </div>
+        <div class="prod-right">
+          <span class="prod-price">₹99</span>
+          <span class="prod-was">₹249</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── FASHION PRODUCTS ── -->
+  <div class="section">
+    <div class="slabel">👕 Fashion & style</div>
+    <div class="cat">
+      <div class="cat-head">
+        <div class="cat-head-row">
+          <span class="cat-emoji">👕</span>
+          <span class="cat-title">Look good on a budget</span>
+        </div>
+        <div class="cat-desc">Style guides and skincare from <strong>@thinknwear_</strong> — 150k followers, 23.5M views/month.</div>
+        <span class="cat-hw">budget creativity over everything</span>
+      </div>
+
+      <a href="https://topmate.io/thinknwear/1952732?utm_source=public_profile&utm_campaign=thinknwear" target="_blank" rel="noopener" class="prod star">
+        <div class="prod-icon">🧵</div>
+        <div class="prod-info">
+          <div class="prod-name">Amma Saree → Shirt</div>
+          <div class="prod-what">Turn your mom's old saree into a wearable shirt — the signature series</div>
+        </div>
+        <div class="prod-right">
+          <span class="prod-price">₹99</span>
+          <span class="prod-was">₹499</span>
+          <span class="badge b-star">★ Top Pick</span>
+        </div>
+      </a>
+
+      <a href="https://topmate.io/thinknwear/1935377?utm_source=public_profile&utm_campaign=thinknwear" target="_blank" rel="noopener" class="prod">
+        <div class="prod-icon">💆</div>
+        <div class="prod-info">
+          <div class="prod-name">Smart Men's Skincare Guide 2026</div>
+          <div class="prod-what">Indian skin, Telugu climate, real-life logic</div>
+        </div>
+        <div class="prod-right">
+          <span class="prod-price">₹99</span>
+          <span class="prod-was">₹499</span>
+          <span class="badge b-orange">Top Rated</span>
+        </div>
+      </a>
+
+      <a href="https://topmate.io/thinknwear/1935356?utm_source=public_profile&utm_campaign=thinknwear" target="_blank" rel="noopener" class="prod">
+        <div class="prod-icon">✂️</div>
+        <div class="prod-info">
+          <div class="prod-name">Grooming Blueprint</div>
+          <div class="prod-what">Master your look in 15 minutes — hair, skin, style</div>
+        </div>
+        <div class="prod-right">
+          <span class="prod-price">₹99</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── EXPLORE ── -->
+  <div class="section">
+    <div class="slabel">Explore</div>
+    <div class="explore">
+      <a href="coaching.html" class="exp">
+        <div class="exp-icon">🚀</div>
+        <div class="exp-body">
+          <div class="exp-title">Instagram Growth Coaching</div>
+          <div class="exp-sub">Monthly plans · 5 spots only · ₹35k–₹60k/mo</div>
+        </div>
+        <span class="exp-arr">→</span>
+      </a>
+      <a href="about.html" class="exp">
+        <div class="exp-icon">📖</div>
+        <div class="exp-body">
+          <div class="exp-title">My full story</div>
+          <div class="exp-sub">Failed school 3 times. Built all of this anyway.</div>
+        </div>
+        <span class="exp-arr">→</span>
+      </a>
+      <a href="https://cagecroc.com/" target="_blank" rel="noopener" class="exp">
+        <div class="exp-icon">👔</div>
+        <div class="exp-body">
+          <div class="exp-title">Cage Croc</div>
+          <div class="exp-sub">Men's clothing brand · cagecroc.com</div>
+        </div>
+        <span class="exp-arr">↗</span>
+      </a>
+      <a href="https://form.typeform.com/to/WlCTt4BV" target="_blank" rel="noopener" class="exp">
+        <div class="exp-icon">✍️</div>
+        <div class="exp-body">
+          <div class="exp-title">Get in touch</div>
+          <div class="exp-sub">Brand collabs, coaching, or anything bigger — I reply personally</div>
+        </div>
+        <span class="exp-arr">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <div class="foot">
+    <p>© 2024 Shekar</p>
+    <p>Payments via <a href="https://topmate.io" target="_blank">Topmate</a> · <a href="about.html">About me</a></p>
+  </div>
+
+</div>
+</body>
+</html>
