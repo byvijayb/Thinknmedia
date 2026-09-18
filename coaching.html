@@ -12,11 +12,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Permanent+Marker&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg: #FAF7F2; --card: #FFFFFF; --text: #2A2A2A; --muted: #707070;
+  --bg: #F2E9D8; --card: #FFFDF7; --text: #2A2A2A; --muted: #707070;
   --accent: #5CBDB9; --accent-dark: #3fa09c; --accent-light: #EBF6F5;
   --highlight: #FBE3E8; --green: #9BC400; --green-light: #f0f7dc;
   --border: #E8E4DE; --radius: 16px;
@@ -24,7 +24,9 @@
   --shadow-lg: 0 8px 40px rgba(0,0,0,0.10);
 }
 html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--text); font-family: 'Manrope', sans-serif; overflow-x: hidden; line-height: 1.65; font-size: 16px; }
+body { background: var(--bg); color: var(--text); font-family: 'Manrope', sans-serif; overflow-x: hidden; line-height: 1.65; font-size: 16px;
+  background-image: radial-gradient(circle, rgba(35,32,23,0.06) 1px, transparent 1px);
+  background-size: 20px 20px; }
 .container { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
 .note { font-family: "Caveat", cursive; font-size: 1.5rem; color: var(--accent-dark); transform: rotate(-1.5deg); display: inline-block; }
 
@@ -36,7 +38,7 @@ nav {
   background: rgba(250,247,242,0.96); backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
 }
-.nav-logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.4px; text-decoration: none; color: var(--text); }
+.nav-logo { font-family: 'Permanent Marker', cursive; font-size: 1.3rem; letter-spacing: -0.3px; text-decoration: none; color: var(--text); transform: rotate(-1.5deg); display: inline-block; }
 .nav-right { display: flex; align-items: center; gap: 0.75rem; }
 .nav-link { font-size: 0.8rem; color: var(--muted); text-decoration: none; font-weight: 600; display: none; }
 .nav-link.show { display: inline; }
@@ -178,6 +180,32 @@ section { padding: 3.5rem 1.25rem; }
 .proof-body strong { font-size: 0.8rem; font-weight: 800; display: block; margin-bottom: 0.2rem; }
 .proof-body p { font-size: 0.72rem; color: var(--muted); line-height: 1.5; }
 
+/* ── CREATOR OS CARD ── */
+.creator-os-card {
+  background: var(--card);
+  border: 1.5px solid var(--accent) !important;
+  position: relative; overflow: hidden;
+}
+.creator-os-card::before {
+  content: ''; position: absolute; top: -60px; right: -60px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(92,189,185,.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cos-badge {
+  display: inline-flex; align-items: center;
+  background: var(--accent); color: #fff;
+  font-size: .6rem; font-weight: 800; letter-spacing: 1.2px;
+  padding: .22rem .7rem; border-radius: 100px;
+  margin-bottom: .85rem; text-transform: uppercase;
+}
+.cos-list li::before { content: '✓'; color: var(--accent) !important; }
+.cos-cta {
+  background: var(--accent) !important; color: #fff !important;
+  border: none !important;
+}
+.cos-cta:hover { background: var(--accent-dark) !important; }
+
 /* ── PRICING ── */
 .pricing-section { background: var(--bg); }
 .plans-col { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.75rem; }
@@ -275,12 +303,224 @@ footer { padding: 2.5rem 1.25rem; text-align: center; color: var(--muted); font-
   .connect-card { flex: 1; }
 }
 @media (max-width: 599px) {
-  .plans-row { grid-template-columns: 1fr; }
-  .proof-grid { grid-template-columns: 1fr 1fr; }
-  .testi-nums { grid-template-columns: repeat(3,1fr); }
-  .as-stats { gap: 0.85rem; }
+  /* Layout */
+  .container { padding: 0 1rem; }
+  section { padding: 2.75rem 1rem; }
+  .hero { padding: 7rem 1rem 3rem; }
+  nav { padding: 0.75rem 1rem; }
+
+  /* Hero */
+  .hero h1 { font-size: 1.85rem; letter-spacing: -0.8px; line-height: 1.12; }
+  .hero-eyebrow { font-size: 0.68rem; padding: 0.28rem 0.75rem; }
+  .hero-btns { flex-direction: column; align-items: stretch; gap: 0.65rem; }
+  .btn-main, .btn-secondary { width: 100%; text-align: center; padding: 0.9rem 1rem; }
+
+  /* About strip */
+  .about-strip { flex-direction: column; gap: 0.85rem; }
+  .as-av { width: 44px; height: 44px; }
+  .as-stats { gap: 0.75rem; flex-wrap: wrap; }
+  .as-num { font-size: 0.92rem; }
+
+  /* Channels */
+  .ch-row { gap: 0.75rem; }
+  .ch-card { padding: 1rem 1.1rem; }
+  .ch-metric { font-size: 1.5rem; }
   .spotlight-stats { gap: 0.4rem; }
+  .sp-stat .sn { font-size: 0.82rem; }
+
+  /* Testimonial */
+  .testi-card { padding: 1.25rem 1rem; }
+  .testi-quote { font-size: 0.88rem; }
+  .testi-nums { grid-template-columns: repeat(3,1fr); }
+  .tn-big { font-size: 1.2rem; }
+
+  /* Pricing - stack everything */
+  .plans-col { gap: 1rem; }
+  .plans-row { grid-template-columns: 1fr; gap: 0.85rem; }
+  .topmate-featured { padding: 1.35rem; }
+  .tf-amt { font-size: 1.6rem; }
+  .tf-list li { font-size: 0.8rem; }
+  .tf-cta { padding: 0.85rem; font-size: 0.88rem; }
+  .plan-card { padding: 1.25rem; }
+  .plan-now { font-size: 1.5rem; }
+  .plan-list li { font-size: 0.78rem; }
+  .creator-os-card { padding: 1.35rem; }
+  .cos-badge { font-size: 0.58rem; }
+
+  /* CTA strip */
+  .cta-strip { padding: 2rem 1rem; }
+  .cta-strip h3 { font-size: 1.15rem; }
+  .cta-strip-btns { flex-direction: column; align-items: stretch; }
+  .btn-white { width: 100%; text-align: center; }
+
+  /* Connect */
+  .connect-grid { flex-direction: column; }
+  .connect-card { padding: 1.25rem; }
+  .cc-title { font-size: 0.92rem; }
+  .cc-desc { font-size: 0.8rem; }
+
+  /* Process steps */
+  .process-step { gap: 0.85rem; }
+  .step-num { width: 34px; height: 34px; font-size: 0.9rem; }
+  .process-text h4 { font-size: 0.92rem; }
+  .process-text p { font-size: 0.83rem; }
+
+  /* Section headers */
+  .sh { font-size: 1.5rem; }
+  .section-sub { font-size: 0.85rem; }
+
+  /* Nav links hidden on mobile, show only CTA */
+  .nav-link { display: none !important; }
+  .nav-book { padding: 0.45rem 0.9rem; font-size: 0.75rem; }
+  .nav-form { display: none; }
+
+  /* Work with me cards */
+  .wcard { padding: 1.1rem; gap: 0.75rem; }
+  .wcard-icon { width: 40px; height: 40px; font-size: 1.15rem; }
+  .wcard-title { font-size: 0.88rem; }
+  .wcard-price { font-size: 0.88rem; }
+  /* Show sticky CTA on mobile */
+  .sticky-cta { display: block; }
+  /* Not-for grid stacks */
+  .not-for-grid { grid-template-columns: 1fr; }
+  /* Roadmap compact */
+  .rp-card { padding: 1rem; margin-bottom: 1rem; }
+  .rp-num { width: 36px; height: 36px; font-size: 0.65rem; }
+  /* FAQ */
+  .faq-q { font-size: 0.82rem; padding: 0.85rem 1rem; }
+  /* Accounts context wraps nicely */
+  .accounts-context { gap: 0.4rem; }
+  /* Bottom padding for sticky bar */
+  body { padding-bottom: 72px; }
 }
+
+/* ─────────────────────────────────────────
+   MILESTONE ROADMAP
+───────────────────────────────────────── */
+.roadmap { display: flex; flex-direction: column; gap: 0; }
+.roadmap-phase { display: flex; gap: 1.25rem; align-items: flex-start; }
+.rp-node { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; padding-top: 0.2rem; }
+.rp-num {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--text); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.5px;
+  flex-shrink: 0; z-index: 1; position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+.rp-connector {
+  width: 2px; flex: 1; min-height: 40px;
+  background: linear-gradient(to bottom, var(--text), var(--accent));
+  margin: 4px 0; opacity: 0.25;
+}
+.rp-card {
+  background: var(--card); border: 1.5px solid var(--border);
+  border-radius: 14px; padding: 1.35rem;
+  margin-bottom: 1.25rem; flex: 1;
+  box-shadow: 0 2px 12px rgba(0,0,0,.05);
+}
+.rp-week {
+  font-size: 0.62rem; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--accent-dark);
+  background: var(--accent-light); display: inline-block;
+  padding: 0.15rem 0.6rem; border-radius: 100px; margin-bottom: 0.55rem;
+}
+.rp-title { font-size: 1rem; font-weight: 800; color: var(--text); margin-bottom: 0.5rem; }
+.rp-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.85rem; }
+.rp-milestone {
+  display: flex; align-items: flex-start; gap: 0.5rem;
+  font-size: 0.78rem; font-weight: 600; color: var(--accent-dark);
+  background: var(--accent-light); padding: 0.65rem 0.85rem;
+  border-radius: 8px; line-height: 1.45;
+}
+.rp-m-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+  flex-shrink: 0; margin-top: 0.2rem;
+}
+
+/* ─────────────────────────────────────────
+   9 ACCOUNTS CONTEXT
+───────────────────────────────────────── */
+.accounts-context {
+  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.ac-badge {
+  font-size: 0.72rem; font-weight: 800; padding: 0.3rem 0.85rem;
+  border-radius: 100px; background: var(--bg);
+  border: 1.5px solid var(--border); color: var(--muted);
+}
+.ac-mid { background: var(--highlight); border-color: rgba(232,99,58,.2); color: #b03060; }
+.ac-win { background: var(--accent-light); border-color: rgba(92,189,185,.3); color: var(--accent-dark); font-size: 0.78rem; }
+.ac-arrow { color: var(--muted); font-size: 0.85rem; }
+
+/* ─────────────────────────────────────────
+   WHO NOT FOR
+───────────────────────────────────────── */
+.not-for-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.not-for-card {
+  background: var(--card); border: 1.5px solid var(--border);
+  border-radius: 14px; padding: 1.35rem;
+}
+.not-for-card.nf-yes { border-color: rgba(92,189,185,.35); background: var(--accent-light); }
+.nf-icon { font-size: 1.1rem; margin-bottom: 0.5rem; color: #c2440f; }
+.nf-title { font-size: 0.82rem; font-weight: 800; margin-bottom: 0.75rem; color: var(--muted); }
+.nf-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.nf-list li { font-size: 0.78rem; color: var(--muted); line-height: 1.5; padding-left: 1rem; position: relative; }
+.nf-list li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
+.not-for-card.nf-yes .nf-list li { color: var(--accent-dark); }
+.not-for-card.nf-yes .nf-list li::before { color: var(--accent-dark); }
+
+/* ─────────────────────────────────────────
+   FAQ ACCORDION
+───────────────────────────────────────── */
+.faq-list { display: flex; flex-direction: column; gap: 0.65rem; }
+.faq-item { background: var(--card); border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; }
+.faq-q {
+  width: 100%; background: none; border: none; padding: 1rem 1.25rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'Manrope', sans-serif; font-size: 0.88rem; font-weight: 700;
+  color: var(--text); cursor: pointer; text-align: left; gap: 1rem;
+  transition: background 0.15s;
+}
+.faq-q:hover { background: var(--bg); }
+.faq-icon { font-size: 1.2rem; font-weight: 400; color: var(--muted); flex-shrink: 0; transition: transform 0.2s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); color: var(--accent); }
+.faq-a { display: none; padding: 0 1.25rem 1rem; }
+.faq-item.open .faq-a { display: block; }
+.faq-a p { font-size: 0.83rem; color: var(--muted); line-height: 1.7; }
+
+/* ─────────────────────────────────────────
+   STICKY MOBILE CTA
+───────────────────────────────────────── */
+.sticky-cta {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+  background: var(--text); border-top: 1px solid rgba(255,255,255,.1);
+  padding: 0.75rem 1.25rem;
+  transform: translateY(100%); transition: transform 0.3s ease;
+  display: none;
+}
+.sticky-cta.visible { transform: translateY(0); }
+.sticky-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 860px; margin: 0 auto; }
+.sticky-left { flex: 1; min-width: 0; }
+.sticky-title { font-size: 0.8rem; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 0.12rem; }
+.sticky-sub { font-size: 0.65rem; color: rgba(255,255,255,.5); }
+.sticky-btn {
+  background: var(--accent); color: #fff; padding: 0.6rem 1.1rem;
+  border-radius: 100px; font-weight: 800; font-size: 0.8rem;
+  text-decoration: none; white-space: nowrap; flex-shrink: 0;
+  transition: background 0.2s;
+}
+.sticky-btn:hover { background: var(--accent-dark); }
+
+/* mobile only */
+@media (min-width: 600px) {
+  .sticky-cta { display: none !important; }
+}
+
+/* ─────────────────────────────────────────
+   MOBILE ADDITIONS for new sections
+───────────────────────────────────────── */
 </style>
 </head>
 <body>
@@ -315,7 +555,7 @@ footer { padding: 2.5rem 1.25rem; text-align: center; color: var(--muted); font-
 <!-- ABOUT STRIP -->
 <div class="about-strip-section">
   <div class="about-strip">
-    <div class="as-av">S</div>
+    <div class="as-av" style="overflow:hidden;padding:0"><img src="data:image/jpeg;base64,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" alt="Shekar" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;border-radius:50%"></div>
     <div class="as-body">
       <div class="as-name">Shekar <a href="about.html" class="as-more">Full story →</a></div>
       <p class="as-text">Failed school 3 times. No degree. One phone. Built three Instagram pages from scratch — fashion (150k), fitness (26k), and a clothing brand that returned 270X on ₹20k. Figured out how content actually works. Made ₹17 lakhs in the 9 months after that.</p>
@@ -357,31 +597,55 @@ footer { padding: 2.5rem 1.25rem; text-align: center; color: var(--muted); font-
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- PROCESS — 3-PHASE MILESTONE ROADMAP -->
 <section style="background:var(--bg)">
   <div class="container">
-    <div class="section-chip">What I'd look at first</div>
-    <h2 class="sh">The path is simpler<br>than you <em>think.</em></h2>
-    <div class="process-list">
-      <div class="card process-step">
-        <div class="step-num">1</div>
-        <div class="process-text">
-          <h4>Finding your angle</h4>
-          <p>We figure out what makes you different — so you stop sounding like everyone else and start showing up for people who actually need you.</p>
+    <div class="section-chip">What working together looks like</div>
+    <h2 class="sh">Three phases.<br><em>One clear outcome.</em></h2>
+    <p class="section-sub" style="margin-bottom:2rem">Most people fail at content because they skip straight to filming. Here's the actual order that works.</p>
+    <div class="roadmap">
+      <div class="roadmap-phase">
+        <div class="rp-node">
+          <div class="rp-num">01</div>
+          <div class="rp-connector"></div>
+        </div>
+        <div class="rp-card">
+          <div class="rp-week">Week 1</div>
+          <h4 class="rp-title">Diagnosis &amp; Angle</h4>
+          <p class="rp-desc">We find exactly why your content isn't growing. Not a guess — we look at the data. Then we define your unique angle so you stop sounding like everyone else.</p>
+          <div class="rp-milestone">
+            <span class="rp-m-dot"></span>
+            Milestone: You know your exact content angle and why your old approach wasn't working.
+          </div>
         </div>
       </div>
-      <div class="card process-step">
-        <div class="step-num">2</div>
-        <div class="process-text">
-          <h4>Content with a reason behind it</h4>
-          <p>Every video has a purpose — build trust, grow reach, move someone to act. We decide that before you film, not after.</p>
+      <div class="roadmap-phase">
+        <div class="rp-node">
+          <div class="rp-num">02</div>
+          <div class="rp-connector"></div>
+        </div>
+        <div class="rp-card">
+          <div class="rp-week">Weeks 2–4</div>
+          <h4 class="rp-title">Script Engine &amp; System</h4>
+          <p class="rp-desc">We build high-retention hooks and a predictable content cadence. You stop guessing what to film. Every video has a purpose — build trust, grow reach, move someone to act.</p>
+          <div class="rp-milestone">
+            <span class="rp-m-dot"></span>
+            Milestone: A repeatable content system that doesn't depend on inspiration.
+          </div>
         </div>
       </div>
-      <div class="card process-step">
-        <div class="step-num">3</div>
-        <div class="process-text">
-          <h4>Making the next step obvious</h4>
-          <p>For brands: buying. For creators: following. For coaches: reaching out. We build toward whichever is yours.</p>
+      <div class="roadmap-phase">
+        <div class="rp-node">
+          <div class="rp-num">03</div>
+        </div>
+        <div class="rp-card">
+          <div class="rp-week">Month 2–3</div>
+          <h4 class="rp-title">The Conversion Loop</h4>
+          <p class="rp-desc">Views turn into the right people — clients, customers, followers who trust you. We build toward whichever outcome is yours: buying, following, or reaching out.</p>
+          <div class="rp-milestone">
+            <span class="rp-m-dot"></span>
+            Milestone: Organic reach that works for your actual goal, not just a big number.
+          </div>
         </div>
       </div>
     </div>
@@ -393,7 +657,14 @@ footer { padding: 2.5rem 1.25rem; text-align: center; color: var(--muted); font-
   <div class="container">
     <div class="section-chip">My own pages</div>
     <h2 class="sh">I didn't learn this from<br>a course. <em>I built it.</em></h2>
-    <p class="section-sub">Three different niches. Same organic system. No paid ads, no shortcuts — every number below is real and public.</p>
+    <p class="section-sub" style="margin-bottom:1rem">Built 9 Instagram pages across 3 niches. 6 were experiments — learned from every one. These 3 are what worked. Same organic system, no paid ads. Every number below is real and public.</p>
+    <div class="accounts-context">
+      <div class="ac-badge">9 pages started</div>
+      <div class="ac-arrow">→</div>
+      <div class="ac-badge ac-mid">6 experiments</div>
+      <div class="ac-arrow">→</div>
+      <div class="ac-badge ac-win">3 that worked</div>
+    </div>
     <div class="ch-row">
       <div class="ch-card">
         <div class="ch-handle-row">
@@ -432,17 +703,7 @@ footer { padding: 2.5rem 1.25rem; text-align: center; color: var(--muted); font-
   </div>
 </section>
 
-<!-- REELS CAROUSEL -->
-<section style="background:var(--bg);padding:2.5rem 1.25rem">
-  <div class="container">
-    <div class="section-chip">@thinknwear_</div>
-    <h2 class="sh">The videos I<br><em>built this with.</em></h2>
-    <p class="section-sub">The actual experiments — published as I figured it out. Scroll to see them all.</p>
-    <div class="reel-scroll">
-      <div class="reel-row" id="reelRow"></div>
-    </div>
-  </div>
-</section>
+<!-- REELS CAROUSEL hidden -->
 
 <!-- TESTIMONIAL -->
 <section class="testi-section">
@@ -474,13 +735,33 @@ footer { padding: 2.5rem 1.25rem; text-align: center; color: var(--muted); font-
   </div>
 </section>
 
-<!-- PROOF VIDEOS -->
-<section style="background:#fff;padding:2.5rem 1.25rem">
+<!-- PROOF VIDEOS hidden -->
+
+<!-- WHO NOT FOR -->
+<section style="background:var(--bg);padding:2.5rem 1.25rem">
   <div class="container">
-    <div class="section-chip">@thinknmedia_</div>
-    <h2 class="sh">I documented<br>every step. <em>Publicly.</em></h2>
-    <p class="section-sub">My coaching channel — the actual decisions, in real time. Not theory.</p>
-    <div class="proof-grid" id="proofRow"></div>
+    <div class="not-for-grid">
+      <div class="not-for-card">
+        <div class="nf-icon">✗</div>
+        <div class="nf-title">This is NOT for you if…</div>
+        <ul class="nf-list">
+          <li>You want overnight viral growth or fake followers</li>
+          <li>You're looking for a shortcut that skips the work</li>
+          <li>You want someone to post randomly without strategy</li>
+          <li>You need a guaranteed follower count by a fixed date</li>
+        </ul>
+      </div>
+      <div class="not-for-card nf-yes">
+        <div class="nf-icon" style="color:var(--accent)">✓</div>
+        <div class="nf-title" style="color:var(--text)">This IS for you if…</div>
+        <ul class="nf-list">
+          <li>You post consistently but the growth isn't happening</li>
+          <li>You want an actual system, not random content advice</li>
+          <li>You're building a real audience for a real business goal</li>
+          <li>You're ready to understand WHY content works, not just copy trends</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -497,6 +778,7 @@ footer { padding: 2.5rem 1.25rem; text-align: center; color: var(--muted); font-
       <div class="topmate-featured">
         <div style="font-size:0.58rem;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:rgba(255,255,255,0.35);margin-bottom:0.75rem">Diagnosis ·· Know what to fix.</div>
         <div class="tf-badge">💬 Talk to me directly</div>
+        <div style="font-size:.6rem;font-weight:700;color:rgba(92,189,185,.7);text-transform:uppercase;letter-spacing:.8px;margin-bottom:.25rem">Know what to fix</div>
         <div class="tf-title">Book a 1-Hour Call</div>
         <div class="tf-sub">We look at your account together. I tell you exactly what I see — what's not working, why, and the exact next steps. No pitch. Just a real audit.</div>
         <div class="tf-price">
@@ -537,6 +819,7 @@ footer { padding: 2.5rem 1.25rem; text-align: center; color: var(--muted); font-
         <div class="plan-card featured">
           <div style="font-size:0.58rem;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:rgba(255,255,255,0.35);margin-bottom:0.5rem">System ·· Know what to create.</div>
           <div class="plan-name">The Full System</div>
+          <div style="font-size:.6rem;font-weight:700;color:rgba(155,196,0,.7);text-transform:uppercase;letter-spacing:.8px;margin-bottom:.25rem">Know what to create</div>
           <p class="plan-for">I handle everything. You just show up and film.</p>
           <div class="plan-price-row"><span class="plan-was" style="color:rgba(255,255,255,0.3)">₹85,000</span></div>
           <div class="plan-price-row"><span class="plan-now">₹60k</span><span class="plan-mo">&nbsp;/mo</span></div>
@@ -624,6 +907,57 @@ footer { padding: 2.5rem 1.25rem; text-align: center; color: var(--muted); font-
         <p style="text-align:center;font-size:0.68rem;color:rgba(255,255,255,0.28);margin-top:0.5rem">High-touch service · Limited availability</p>
       </div>
 
+
+      <!-- DIFFERENTIATOR -->
+      <div style="background:var(--accent-light);border:1px solid rgba(92,189,185,.2);border-radius:14px;padding:1.25rem 1.35rem;margin-top:.25rem">
+        <p style="font-size:.8rem;font-weight:800;color:var(--accent-dark);margin-bottom:.5rem">Think n Media doesn't just produce more content.</p>
+        <p style="font-size:.78rem;color:var(--sub);line-height:1.65;margin-bottom:.75rem">We build a content system that learns what makes YOUR audience stop, watch, trust — and act.</p>
+        <div style="display:flex;align-items:center;gap:.35rem;flex-wrap:wrap;font-size:.65rem;font-weight:700;color:var(--muted)">
+          <span style="background:var(--card);border:1px solid var(--border);padding:.18rem .6rem;border-radius:100px">Behaviour</span>
+          <span style="color:var(--muted)">→</span>
+          <span style="background:var(--card);border:1px solid var(--border);padding:.18rem .6rem;border-radius:100px">Strategy</span>
+          <span style="color:var(--muted)">→</span>
+          <span style="background:var(--card);border:1px solid var(--border);padding:.18rem .6rem;border-radius:100px">Story</span>
+          <span style="color:var(--muted)">→</span>
+          <span style="background:var(--card);border:1px solid var(--border);padding:.18rem .6rem;border-radius:100px">Content</span>
+          <span style="color:var(--muted)">→</span>
+          <span style="background:var(--card);border:1px solid var(--border);padding:.18rem .6rem;border-radius:100px">Data</span>
+          <span style="color:var(--muted)">→</span>
+          <span style="background:var(--card);border:1px solid var(--border);padding:.18rem .6rem;border-radius:100px">Iteration</span>
+        </div>
+      </div>
+
+      <!-- CREATOR OS — premium plan -->
+      <div class="plan-card creator-os-card">
+        <div class="cos-badge">END-TO-END</div>
+        <div class="plan-name" style="font-size:1.3rem">Creator OS</div>
+        <p class="plan-for">For creators, founders, coaches, educators, and personal brands who have something valuable to say — but don't want to manage the entire content operation themselves.</p>
+        <div style="font-family:'Caveat',cursive;font-size:1.15rem;color:var(--accent-dark);margin-bottom:1rem;transform:rotate(-1deg);display:inline-block">You show up. We handle the rest.</div>
+        <div class="plan-price-row">
+          <span class="plan-now" style="color:var(--accent)">₹1,50,000</span>
+          <span class="plan-mo">&nbsp;/month</span>
+        </div>
+        <p style="font-size:.72rem;color:var(--muted);margin-bottom:1.25rem;margin-top:.15rem">Strategy → Research → Ideas → Scripts → Shoot → Edit → Publish → Analyse → Iterate</p>
+        <ul class="plan-list cos-list">
+          <li>Monthly content strategy</li>
+          <li>Audience & competitor research</li>
+          <li>Content ideas & hook development</li>
+          <li>Full scriptwriting</li>
+          <li>2 shoot days/month + shoot direction</li>
+          <li>12–16 short-form videos/month</li>
+          <li>Long-form content support</li>
+          <li>Professional editing + captions</li>
+          <li>Thumbnail concepts, titles, descriptions</li>
+          <li>Publishing & scheduling</li>
+          <li>Analytics & performance review</li>
+          <li>Monthly strategy optimisation</li>
+          <li>Continuous content experiments</li>
+        </ul>
+        <p style="font-size:.72rem;color:var(--muted);line-height:1.6;margin-bottom:1.25rem;padding:.75rem;background:rgba(92,189,185,.07);border-radius:8px;border-left:2px solid var(--accent)">The exact monthly content mix is finalised during onboarding based on your goals and platform.</p>
+        <p style="font-size:.72rem;color:var(--muted);margin-bottom:1.25rem">Limited to a small number of clients so every brand gets real strategic attention — not a templated plan.</p>
+        <a class="plan-cta cos-cta" href="https://form.typeform.com/to/WlCTt4BV" target="_blank" rel="noopener">Apply for Creator OS →</a>
+        <p class="plan-note" style="color:var(--muted)">High-touch · Limited availability · I respond personally</p>
+      </div>
     </div>
   </div>
 </section>
@@ -637,6 +971,61 @@ footer { padding: 2.5rem 1.25rem; text-align: center; color: var(--muted); font-
     <a class="btn-white ghost" href="https://form.typeform.com/to/WlCTt4BV" target="_blank" rel="noopener">Fill in the form</a>
   </div>
 </div>
+
+<!-- FAQ -->
+<section style="background:var(--bg);padding:3rem 1.25rem">
+  <div class="container" style="max-width:620px">
+    <div class="section-chip">Common questions</div>
+    <h2 class="sh" style="margin-bottom:1.5rem">Before you<br><em>reach out.</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>How much time do I need to commit weekly?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>For the 1-hr call — just 60 minutes, once. For monthly plans, roughly 2–4 hours a week for filming. I handle the thinking, scripting, and direction. You show up and record.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What if I'm not comfortable on camera yet?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>That's actually easier to work with than someone with bad habits. A lot of my work is about removing the overthinking that makes people stiff on camera. We build around your natural way of talking — not a performance.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Do I need a large following to start getting results?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>No. I've grown pages from under 1,000 followers. The system works whether you're starting from scratch or stuck at 10k. What matters is whether your content has a clear angle — not your current follower count.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What niche or industry do you work with?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Fashion, fitness, clothing brands, coaching, personal brand, business — I've built across all of them. The organic system transfers across niches. What changes is the angle and the audience — both of which we figure out together.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What's the difference between the 1-hr call and a monthly plan?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>The call gives you a clear diagnosis — what's wrong, what to fix, what to do next. You take it and run. Monthly plans mean I'm actively involved: writing scripts, reviewing hooks, building the system with you, week after week.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CONNECT -->
 <section class="connect-section" id="book-call">
@@ -663,6 +1052,17 @@ footer { padding: 2.5rem 1.25rem; text-align: center; color: var(--muted); font-
   </div>
 </section>
 
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-inner">
+    <div class="sticky-left">
+      <div class="sticky-title">Need clarity on your content?</div>
+      <div class="sticky-sub">1-hr audit · ₹2,700 · Instant booking</div>
+    </div>
+    <a href="https://topmate.io/eraofshekar/1764414" target="_blank" rel="noopener" class="sticky-btn">Book now →</a>
+  </div>
+</div>
+
 <footer>
   <div class="footer-logo">Shekar.</div>
   <p>© 2024 Shekar. All rights reserved.</p>
@@ -678,16 +1078,6 @@ footer { padding: 2.5rem 1.25rem; text-align: center; color: var(--muted); font-
 <script>
 var PLAY = '<svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(0,0,0,0.42)"/><polygon points="21,17 37,26 21,35" fill="#fff"/></svg>';
 
-var reels = [
-  { url:'https://www.instagram.com/reel/C6eA3jwJpDk/', code:'C6eA3jwJpDk' },
-  { url:'https://www.instagram.com/reel/DYKMr4FTKJc/', code:'DYKMr4FTKJc' },
-  { url:'https://www.instagram.com/reel/DW-xDJ7E4pY/', code:'DW-xDJ7E4pY' },
-  { url:'https://www.instagram.com/reel/DW3ryOeEw1S/', code:'DW3ryOeEw1S' }
-];
-var proofPosts = [
-  { url:'https://www.instagram.com/p/DZO_qTUKFAX/', code:'DZO_qTUKFAX', title:'How the growth actually happened', desc:'Breaking down the exact decisions — @thinknmedia_' },
-  { url:'https://www.instagram.com/p/DZUrbs9Kh2e/', code:'DZUrbs9Kh2e', title:"What I'd do differently from scratch", desc:"The real mistakes and what I'd skip — @thinknmedia_" }
-];
 
 function thumbSrcs(code) {
   return [
@@ -702,35 +1092,7 @@ function tryLoad(img, srcs, i) {
   img.onerror=function(){tryLoad(img,srcs,i+1);};
 }
 
-function buildReel(r) {
-  var a=document.createElement('a');
-  a.className='reel-thumb';a.href=r.url;a.target='_blank';a.rel='noopener';
-  var wrap=document.createElement('div');wrap.className='reel-img-wrap';
-  var img=new Image();img.alt='Reel';img.style.cssText='width:100%;height:100%;object-fit:cover;display:block;';
-  tryLoad(img,thumbSrcs(r.code),0);
-  var ov=document.createElement('div');ov.className='play-circle';ov.innerHTML=PLAY;
-  wrap.appendChild(img);wrap.appendChild(ov);
-  var lbl=document.createElement('div');lbl.className='reel-label';
-  lbl.innerHTML='<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Watch reel';
-  a.appendChild(wrap);a.appendChild(lbl);return a;
-}
-function buildProof(p) {
-  var a=document.createElement('a');
-  a.className='proof-card';a.href=p.url;a.target='_blank';a.rel='noopener';
-  var wrap=document.createElement('div');wrap.className='proof-img-wrap';
-  var img=new Image();img.alt=p.title;img.style.cssText='width:100%;height:100%;object-fit:cover;display:block;';
-  tryLoad(img,thumbSrcs(p.code),0);
-  var ov=document.createElement('div');ov.className='play-circle';ov.innerHTML=PLAY;
-  wrap.appendChild(img);wrap.appendChild(ov);
-  var body=document.createElement('div');body.className='proof-body';
-  body.innerHTML='<strong>'+p.title+' →</strong><p>'+p.desc+'</p>';
-  a.appendChild(wrap);a.appendChild(body);return a;
-}
 
-var rr=document.getElementById('reelRow');
-reels.forEach(function(r){rr.appendChild(buildReel(r));});
-var pr=document.getElementById('proofRow');
-proofPosts.forEach(function(p){pr.appendChild(buildProof(p));});
 
 // drag scroll
 (function(){
