@@ -54,9 +54,13 @@
 
   // Hide images that fail to load (e.g. a missing screenshot) instead of showing a broken icon
   document.querySelectorAll('img[data-optional]').forEach(function (img) {
-    img.addEventListener('error', function () {
+    var fail = function () {
       var box = img.closest('[data-optional-box]') || img;
       box.style.display = 'none';
-    });
+      var fb = box.parentElement && box.parentElement.querySelector('[data-fallback]');
+      if (fb) fb.hidden = false;
+    };
+    if (img.complete && img.naturalWidth === 0) fail();
+    else img.addEventListener('error', fail);
   });
 })();
